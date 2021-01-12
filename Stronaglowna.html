@@ -1,0 +1,802 @@
+<html>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+<head>
+<title>X Liceum Ogólnokształcące w Krakowie im. KEN</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Yantramanav:wght@700;900&display=swap,News+Cycle:wght@700&display=swap"
+rel="stylesheet">
+<style>
+html, body {
+  height: 100%;
+  margin: 0;
+  overflow-x: hidden;
+  overflow-y: visible;
+  background-image: url('https://scontent.fktw5-1.fna.fbcdn.net/v/t1.15752-9/133832333_422391252215182_5439948955064273770_n.png?_nc_cat=105&cb=846ca55b-ee17756f&ccb=2&_nc_sid=ae9488&_nc_ohc=TVfEOICzBd4AX9MSPvG&_nc_ht=scontent.fktw5-1.fna&oh=35de813962b3833d433703268c8a0183&oe=6010517A');
+  background-repeat: no-repeat;
+  background-attachment: fixed;  
+  background-size: cover;
+}
+.loader-wrapper {
+  width: 10000px;
+  height: 10000px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: White;
+  display:flex;
+}
+#left{
+     flex: 1; 
+     left:0;
+     width:300px;
+     background: linear-gradient(DodgerBlue, DeepSkyBlue);  
+     height:100vh;
+     position:fixed;
+     top:0;
+}
+@media screen and (max-width:530px) and (max-height: 768px) {
+  #left {
+     width:25vw;
+  }
+}
+#center {
+     margin-top:12px;
+     margin-left:310px;
+     margin-right: -8px;
+     flex: 3;
+}
+@media screen and (max-width:530px) and (max-height: 768px) {
+  #center {
+     margin-left:25vw;
+  }
+}
+span b {
+     font-family: "Yantramanav", sans-serif;
+     color: white;
+     font-size: 5.3vw;
+     font-size: 10.6vh;
+}
+span  {
+     font-family: "Yantramanav", sans-serif;
+     color: white;
+     font-size: 5.2vh;
+}
+.podspan {
+     font-family: "Yantramanav", sans-serif;
+     color: white;
+     font-size: 2vh;
+}
+.tytulnews {
+     font-family: "News Cycle", sans-serif;
+     color: #757471;
+     font-size: 1vw;
+     text-transform:uppercase;
+     letter-spacing: 2px;
+}
+@media screen and (max-width:768px) and (max-height: 1920px) {
+  .tytulnews {
+     font-size: 3vw;
+  }
+}
+.podnews {
+     font-family: "News Cycle", sans-serif;
+     color: Grey;
+     font-size: 1vw;
+     text-align: justify;
+}
+@media screen and (max-width:768px) and (max-height: 1920px) {
+  .tytulnews, .podnews {
+     font-size: 3vw;
+  }
+}
+div.kolumna a:link, .kolumna a:visited, .kolumna a:hover, .kolumna a:active, .kolumna2normalnie a:link, .kolumna2normalnie a:visited, .kolumna2normalnie a:hover, .kolumna2normalnie a:active, kolumna2tel a:link, .kolumna2tel a:visited, .kolumna2tel a:hover, .kolumna2tel a:active {
+  color: Grey;
+  background-color: transparent;
+  text-decoration: underline;
+}
+div.kolumna2tel a:link {
+  color: Grey;
+  background-color: transparent;
+  text-decoration: underline;
+}
+div.kolumna2tel a:visited {
+  color: Grey;
+  background-color: transparent;
+  text-decoration: underline;
+}
+div.kolumna2tel a:hover {
+  color: Grey;
+  background-color: transparent;
+  text-decoration: underline;
+}
+div.kolumna2tel a:active {
+  color: Grey;
+  background-color: transparent;
+  text-decoration: underline;
+}
+.kolumna {
+  float: left;
+  width: 31.5%;
+  padding: 5px;
+}
+.kolumna2normalnie {
+  float: left;
+  width: 95%;
+  padding: 5px;
+  display: block;
+  margin-left: auto;
+  font-size: 0.8vw;
+}
+.kolumna2tel {
+  float: left;
+  width: 95%;
+  padding: 5px;
+  display: none;
+}
+@media screen and (max-width:1024px) and (max-height: 768px) {
+        .kolumna2normalnie {
+        display: none;
+}
+}
+@media screen and (max-width:1024px) and (max-height: 768px) {
+        .kolumna2tel {
+        display: block;
+}
+}
+.rzad::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+@media screen and (max-width:1024px) and (max-height: 768px) {
+  .kolumna {
+    width: 95%;
+  }
+}
+div.wczesniejsze a:link {
+  color: Grey;
+  background-color: transparent;
+  text-decoration: underline;
+}
+div.wczesniejsze a:visited {
+  color: Grey;
+  background-color: transparent;
+  text-decoration: underline;
+}
+div.wczesniejsze a:hover {
+  color: Grey;
+  background-color: transparent;
+  text-decoration: underline;
+}
+div.wczesniejsze a:active {
+  color: Grey;
+  background-color: transparent;
+  text-decoration: underline;
+}
+.wczesniejsze {
+     font-family: "News Cycle", sans-serif;
+     color: Grey;
+     font-size: 1vw;
+     font-weight: bold;
+     letter-spacing: 2px;
+     text-transform:uppercase;
+}
+.naglowek {
+     font-family: "Helvetica";
+     color: SlateGrey;
+     font-size: 1.3vw;
+     letter-spacing: 2px;
+}
+@media screen and (max-width:530px) and (max-height: 768px) {
+  .naglowek {
+     font-size: 3vw;
+     margin-left: 2vw;
+  }
+}
+.myButton {
+	box-shadow: 0px 6px 13px -4px DarkGrey;
+	background:linear-gradient(to bottom, #ffffff 5%, #f6f6f6 100%);
+	background-color:#ffffff;
+	border-radius:42px;
+	display:inline-block;
+	cursor:pointer;
+	color:DodgerBlue;
+	font-family:Arial;
+	font-size:2vh;
+	font-weight:bold;
+        padding:2vh 8vh;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #ffffff;
+	transition: color 0.3s, padding 0.3s;
+}
+.stronaglownanormalnie{
+	display: block;
+}
+.stronaglownatel {
+        display: none;
+}
+@media screen and (max-width:1023px) and (max-height: 767px) {
+        .stronaglownanormalnie {
+        display: none;
+}
+}
+@media screen and (max-width:1023px) and (max-height: 767px) {
+        .stronaglownatel {
+        display: block;
+}
+}
+.COVID-19normalnie{
+	display: block;
+}
+.COVID-19tel {
+        display: none;
+}
+@media screen and (max-width:1023px) and (max-height: 767px) {
+        .COVID-19normalnie {
+        display: none;
+}
+}
+@media screen and (max-width:1023px) and (max-height: 767px) {
+        .COVID-19tel {
+        display: block;
+}
+}
+.Oszkolenormalnie{
+	display: block;
+}
+.Oszkoletel {
+        display: none;
+}
+@media screen and (max-width:1023px) and (max-height: 767px) {
+        .Oszkolenormalnie {
+        display: none;
+}
+}
+@media screen and (max-width:1023px) and (max-height: 767px) {
+        .Oszkoletel {
+        display: block;
+}
+}
+.Rekrutacjanormalnie{
+	display: block;
+}
+.Rekrutacjatel {
+        display: none;
+}
+@media screen and (max-width:1023px) and (max-height: 767px) {
+        .Rekrutacjanormalnie {
+        display: none;
+}
+}
+@media screen and (max-width:1023px) and (max-height: 767px) {
+        .Rekrutacjatel {
+        display: block;
+}
+}
+.Moodlenormalnie{
+	display: block;
+}
+.Moodletel {
+        display: none;
+}
+@media screen and (max-width:1023px) and (max-height: 767px) {
+        .Moodlenormalnie {
+        display: none;
+}
+}
+@media screen and (max-width:1023px) and (max-height: 767px) {
+        .Moodletel {
+        display: block;
+}
+}
+.Kontaktnormalnie{
+	display: block;
+}
+.Kontakttel {
+        display: none;
+}
+@media screen and (max-width:1023px) and (max-height: 767px) {
+        .Kontaktnormalnie {
+        display: none;
+}
+}
+@media screen and (max-width:1023px) and (max-height: 767px) {
+        .Kontakttel {
+        display: block;
+}
+}
+.myButton:hover {
+        color: LightGreen;
+	position:relative;
+	padding:2vh 9.6vh;
+	position:relative;
+}
+.myButton:active {
+	position:relative;
+	top:1px;
+}
+.myButton2 {
+	box-shadow: 0px 6px 13px -4px DarkGrey;
+	background:linear-gradient(to bottom, #ffffff 5%, #f6f6f6 100%);
+	background-color:#ffffff;
+	border-radius:42px;
+	display:inline-block;
+	cursor:pointer;
+	color:DodgerBlue;
+	font-family:Arial;
+	font-size:2vh;
+	font-weight:bold;
+	padding:2vh 10.26vh;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #ffffff;
+	transition: color 0.3s, padding 0.3s;
+}
+.myButton2:hover {
+        color: LightGreen;
+	position:relative;
+	padding:2vh 11.86vh;
+	position:relative;
+}
+.myButton2:active {
+	position:relative;
+	top:1px;
+}
+.myButton3 {
+	box-shadow: 0px 6px 13px -4px DarkGrey;
+	background:linear-gradient(to bottom, #ffffff 5%, #f6f6f6 100%);
+	background-color:#ffffff;
+	border-radius:42px;
+	display:inline-block;
+	cursor:pointer;
+	color:DodgerBlue;
+	font-family:Arial;
+	font-size:2vh;
+	font-weight:bold;
+	padding:2vh 10.66vh;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #ffffff;
+	transition: color 0.3s, padding 0.3s;
+}
+.myButton3:hover {
+        color: LightGreen;
+	position:relative;
+	padding:2vh 12.26vh;
+	position:relative;
+}
+.myButton3:active {
+	position:relative;
+	top:1px;
+}
+.myButton4 {
+	box-shadow: 0px 6px 13px -4px DarkGrey;
+	background:linear-gradient(to bottom, #ffffff 5%, #f6f6f6 100%);
+	background-color:#ffffff;
+	border-radius:42px;
+	display:inline-block;
+	cursor:pointer;
+	color:DodgerBlue;
+	font-family:Arial;
+	font-size:2vh;
+	font-weight:bold;
+	padding:2vh 9.6vh;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #ffffff;
+	transition: color 0.3s, padding 0.3s;
+}
+.myButton4:hover {
+        color: LightGreen;
+	position:relative;
+	padding:2vh 11.2vh;
+	position:relative;
+}
+.myButton4:active {
+	position:relative;
+	top:1px;
+}
+.myButton5 {
+	box-shadow: 0px 6px 13px -4px DarkGrey;
+	background:linear-gradient(to bottom, #ffffff 5%, #f6f6f6 100%);
+	background-color:#ffffff;
+	border-radius:42px;
+	display:inline-block;
+	cursor:pointer;
+	color:DodgerBlue;
+	font-family:Arial;
+	font-size:2vh;
+	font-weight:bold;
+	padding:2vh 10.93vh;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #ffffff;
+	transition: color 0.3s, padding 0.3s;
+}
+.myButton5:hover {
+        color: LightGreen;
+	position:relative;
+	padding:2vh 12.53vh;
+	position:relative;
+}
+.myButton5:active {
+	position:relative;
+	top:1px;
+}
+.myButton6 {
+	box-shadow: 0px 6px 13px -4px DarkGrey;
+	background:linear-gradient(to bottom, #ffffff 5%, #f6f6f6 100%);
+	background-color:#ffffff;
+	border-radius:42px;
+	display:inline-block;
+	cursor:pointer;
+	color:DodgerBlue;
+	font-family:Arial;
+	font-size:2vh;
+	font-weight:bold;
+	padding:2vh 10.93vh;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #ffffff;
+	transition: color 0.3s, padding 0.3s;
+}
+.myButton6:hover {
+        color: LightGreen;
+	position:relative;
+	padding:2vh 12.53vh;
+	position:relative;
+}
+.myButton6:active {
+	position:relative;
+	top:1px;
+}
+#datetime {
+     font-family: "Yantramanav", sans-serif;
+     color: white;
+     font-size: 2vh;
+}
+</style>
+</head>
+<body>
+<div id="left"><center><br><br><span><b>X</b>LO</span><div class="podspan">im. Komisji Edukacji Narodowej w Krakowie</div>
+<div class="Stronaglownanormalnie"><br style="line-height: 5vh"><a href="Stronaglowna.html" class="myButton">Strona główna</a></div>
+<div class="Stronaglownatel"><br style="line-height: 5vh"><a href="Stronaglowna.html"><img src="dom.svg" width="40vw"></a></div>
+<div class="COVID-19normalnie"><p><a href="COVID-19.html" class="myButton2">COVID-19</a></p></div>
+<div class="COVID-19tel"><p><a href="COVID-19.html"><img src="koronawirus.svg" width="40vw"></a></p></div>
+<div class="Oszkolenormalnie"><p><a href="Oszkole.html" class="myButton3">O szkole</a></p></div>
+<div class="Oszkoletel"><p><a href="Oszkole.html"><img src="szkola.svg" width="40vw"></a></p></div>
+<div class="Rekrutacjanormalnie"><p><a href="Rekrutacja.html" class="myButton4">Rekrutacja</a></p></div>
+<div class="Rekrutacjatel"><p><a href="Rekrutacja.html"><img src="dlugopis.svg" width="40vw"></a></p></div>
+<div class="Moodlenormalnie"><p><a href="https://www.x-lo.krakow.pl/moodle/index.php" class="myButton5">Moodle</a></p></div>
+<div class="Moodletel"><p><a href="https://www.x-lo.krakow.pl/moodle/index.php"><img src="moodle.svg" width="40vw"></a></p></div>
+<div class="Kontaktnormalnie"><p><a href="Kontakt.html" class="myButton6">Kontakt</a></p></div>
+<div class="Kontakttel"><p><a href="Kontakt.html"><img src="chmura.svg" width="40vw"></a></p></div>
+</center></div>
+<div id="center"><div class="naglowek">Najnowsze wiadomości</div>
+<br>
+<div class="rzad">
+<div class="kolumna">
+      <b><div class="tytulnews">Życzenia</div></b>
+      <img src="http://www.x-lo.krakow.pl/images/material_news/inne2/zyczenia.jpg" alt="Życzenia" style="width:100%">
+  </div>
+<div class="kolumna">
+<b><div class="tytulnews">Nietutejsi życzą najpiękniej</div></b>
+   <a href="https://drive.google.com/file/d/1uwpMcnYixAL2qcwKXTs-1sXIXoxwANE5/view?fbclid=IwAR2JEznXCOmchTl0m2n7MZyI1PH2qcqZ7sBxV6A3CPwTAGER3MeTV0t2PhE"><div class="podnews">Niespodzianka od Dzieciątek Nietutejszych Dziesiątki</a></div>
+</div>
+<div class="kolumna">
+<b><div class="tytulnews">Święta...Święta!</div></b>
+<img src="http://www.x-lo.krakow.pl/images/material_news/inne2/swieta.png" alt="Święta" style="width:100%">
+  </div>
+</div>
+<!-- KONIEC TRZECH NEWSÓW-->
+<div class="rzad">
+  <div class="kolumna">
+    <b><div class="tytulnews">SUKCES ABSOLWENTKI</div></b>
+    <div class="podnews">Niezmiernie miło jest nam poinformować, że Absolwentka X Liceum Ogólnokształcącego im. Komisji Edukacji Narodowej, została wyróżniona Stypendium Prezydenta Miasta Krakowa im. Juliusza Lea. Była uczennica "Dziesiątki" nie tylko osiągała wysokie wyniki w nauce, pomagała innym w nauce matematyki, ale również była kapitanem drużyny siatkarskiej która wywalczyła podium w Licealiadzie. Naszej absolwentce życzymy wielu sukcesów na studiach, na rynku pracy oraz w życiu osobistym.
+
+<p>Cała społeczność X Liceum Ogólnokształcącego w Krakowie</p>
+  </div>
+  </div>
+  <div class="kolumna">
+    <b><div class="tytulnews">NASI KOCHANI FANI!</div></b>
+    <div class="podnews">Przygotowana przez Teatr Szkolny Nietutejsi epidemiczna paradokumentalna hybryda teatralno- filmowa pt. „Blisko” zwyciężyła w plebiscycie publiczności 40. Małopolskiego Festiwalu Artystycznego Młodzieży, zorganizowanego w sieci przez krakowski MDK im. A. Bursy.
+
+<p>A Publiczność to przecież Wy! Dziękujemy wszystkim, którzy, doceniwszy wagę tematu i trud onlinowych spotkań, oddali na nas głosy, a tych, którzy nie widzieli, zapraszamy do obejrzenia nagrania. Napisy początkowe – w formie plakatu – opracowała Kasia Pikul, a wystąpili: Julia Cybulska, Maja Grabowska, Sebastian Kania, Justyna Karpała, Miłosz Kasperczyk (też nasz znakomity montażysta), Anna Keller, Karolina Kotarba, Ola Lachman, Zuza Patoła, Ola Stach.</p>
+
+<p>Nad całością czuwała Marzena Dąbrowa Szatko.
+A więc – bądźmy BLISKO! Oto „Blisko”!
+Spektakl można zobaczyć: <a href="https://youtu.be/Rl71CfJvblI?list=UU3J7YHMHzy_jKYFU2iwYkyg">kliknij</a></p></div>
+  </div>
+  <div class="kolumna">
+    <b><div class="tytulnews">MISTRZOSTWA TEAKWON-DO</div></b>
+    <img src="http://www.x-lo.krakow.pl/images/material_news/sport_2020/taekwondo.jpg" alt="Taekwondo" style="width:100%">
+  <div class="podnews">Kacper Talaga uczeń naszej szkoły, klasy 2f brał udział w 27 Mistrzostwach Polski Juniorów Młodszych Teakwon-Do ITF. Wywalczył Mistrzostwo Polski. Zawody odbywały się w Nowej Rudzie. Gratulujemy i życzymy dalszych sukcesów.
+<p>Wychowawczyni klasy 2f,
+Ewa Stefańska</p></div>
+  </div>
+</div>
+<!-- KONIEC TRZECH NEWSÓW-->
+<div class="rzad">
+  <div class="kolumna">
+    <b><div class="tytulnews">DZIESIĄTKOWICZE PROWADZĄ BIZNES</div></b>
+<a href="http://manager-roku.pl/">
+    <img src="http://www.x-lo.krakow.pl/images/material_news/inne2/manager.jpg" alt="Manager" style="width:100%">
+</a>
+    <div class="podnews">Dwie drużyny wcielają się w rolę zarządu serwisu IT, a może kliniki weterynaryjnej, a może salonu kosmetycznego i walczą o tytuł "managera roku".
+<p>Powodzenia!</p>
+  </div>
+</div>
+<div class="kolumna">
+    <b><div class="tytulnews">SUKCES NASZEJ ŻEGLARKI</div></b>
+    <img src="http://www.x-lo.krakow.pl/images/material_news/sport_2020/zeglarka.jpg" alt="zeglarka" style="width:100%">
+    <div class="podnews">W miniony weekend uczennica naszej szkoły brała udział w XXI Regatach o Puchar Prezydenta Krakowa. Adelina wygrała nie tylko w klasie Laser 4.7 dziewcząt, ale także w generalnej klasyfikacji tej klasy (dziewcząt i chłopców). Zwyciężczyni postanowiła przekazać wywalczony w tych regatach Puchar Prezydenta Krakowa szkole. Zajmie on zaszczytne miejsce wśród licznych trofeów za osiągnięcia sportowe, artystyczne i naukowe naszych Uczniów oraz Absolwentów.
+<p>Serdecznie gratulujemy Adelinie wspaniałej wygranej!</p>
+  </div>
+</div>
+<div class="kolumna">
+    <b><div class="tytulnews">MIĘDZYNARODOWY, CHARYTATYWNY E-BIEG SZTAFETOWY</div></b>
+    <div class="podnews">W dniach 15 - 17 października przypadały międzynarodowe obchody Erasmus Days z tej okazji zorganizowany został przez Fundację Rozwoju Systemu Edukacji e-Bieg w formie rywalizacji zdalnej 4 - osobowych drużyn sztafetowych, w godzinnym biegu. Patronat nad imprezą sprawowało Ministerstwo Sportu, a ambasadorką wydarzenia była Oktawia Nowacka mistrzyni świata i medalistka olimpijka z Rio. Czterej uczniowie naszej szkoły z klasy 2f: Stanisław Durlik, Jakub Groblicki, Bartosz Zięba i Kacper Talaga uczestniczyli w tym biegu, zdobywając liczne nagrody dla szkoły i siebie.
+
+<p>Nauczyciel wychowania fizycznego, Ewa Stefańska</p>
+  </div>
+</div>
+</div>
+<!-- KONIEC TRZECH NEWSÓW-->
+<div class="rzad">
+  <div class="kolumna">
+    <b><div class="tytulnews">MISTRZOWIE ORTOGRAFII W NASZEJ SZKOLE</div></b>
+<a href="http://www.x-lo.krakow.pl/materialy_news/ortografia.pdf">
+    <div class="podnews">Czytaj</div>
+</a>
+</div>
+<div class="kolumna">
+    <b><div class="tytulnews">Życzenia</div></b>
+    <div class="podnews">Szanowna Pani Dyrektor,
+w imieniu Samorządu Uczniowskiego chciałbym złożyć najserdeczniejsze życzenia dla całej dyrekcji, grona pedagogicznego oraz pracowników szkoły z okazji Dnia Edukacji Narodowej. Chcemy okazać naszą wdzięczność za codzienną pracę na rzecz szkoły, cierpliwość oraz pasję w wykonywanej pracy. Mamy nadzieję, że w dalszym ciągu będą Państwo wykonywać swój wyjątkowy zawód w szczęściu oraz radości. Dziękujemy za każdą poświęconą nam sekundę uwagi. Wszystkiego najlepszego!
+<p>Z wyrazami szacunku,<br>
+Przewodniczący Samorządu Uczniowskiego<br>
+Bartosz Ślusarczyk</p>
+  </div>
+</div>
+<div class="kolumna">
+    <b><div class="tytulnews">ŚWIATOWY DZIEŃ ZDROWIA PSYCHICZNEGO</div></b>
+    <img src="http://www.x-lo.krakow.pl/images/material_news/inne2/psychiczne.jpg" alt="Psychiczne" style="width:100%">
+    <div class="podnews">10 października to szczególna data – w tym czasie na całym świecie obchodzony jest Międzynarodowy Dzień Zdrowia Psychicznego. Wydarzenie ma zwrócić uwagę opinii publicznej na problematykę zaburzeń psychicznych oraz dążyć do promowania właściwych postaw ludzkich wobec osób cierpiących na zaburzenia psychiczne.
+<a href="http://www.x-lo.krakow.pl/www/news,913">Czytaj więcej</a></div>
+  </div>
+</div>
+<!-- KONIEC TRZECH NEWSÓW-->
+<div class="rzad">
+  <div class="kolumna">
+    <b><div class="tytulnews">MAJA GRABOWSKA JEDNĄ Z 8 WSPANIAŁYCH</div></b>
+<img src="http://www.x-lo.krakow.pl/images/material_news/inne2/wspaniali(1).jpg" alt="Wspaniali(1)" style="width:100%">
+    <div class="podnews">25 września w sali obrad Urzędu Miasta Krakowa odbył się finał XXVI edycji Samorządowego Konkursu Nastolatków „8 Wspaniałych”, w którym nagradzana jest młodzież zaangażowana w działalność charytatywną i społeczną. Z wielką radością informujemy, że wśród laureatów znalazła się uczennica naszej szkoły - Maja Grabowska z klasy IIIA zgłoszona przez wychowawczynię – p. Paulinę Klemczak.
+<p>
+Kapituła Konkursu doceniała zarówno działalność Mai na rzecz szkoły – aktywność w samorządzie szkolnym, wolontariacie i grupie teatralnej „Nietutejsi”, jak również jej ogromne zaangażowanie w pracę na rzecz lokalnej społeczności. Maja jest wolontariuszką Maltańskiej Służby Medycznej, przyboczną w gromadzie zuchowej ZHR, a w czasie wakacji prowadzi zajęcia dla dzieci w Klubie Kultury Soboniowice.</p>
+
+<p>Serdecznie gratulujemy Mai i zachęcamy innych uczniów do pójścia w jej ślady.</p></div>
+</a>
+</div>
+<div class="kolumna">
+    <b><div class="tytulnews">SUKCES UCZENNICY W JEŹDZIECTWIE</div></b>
+    <img src="http://www.x-lo.krakow.pl/images/material_news/inne2/jezdziectwo.jpg" alt="Jeździectwo" style="width:100%">
+    <div class="podnews">Miło nam poinformować, że uczennica klasy 1a Karolina Nowak zdobyła w ostatni weekend 1 miejsce w Srebrnej Rundzie Towarzyskiego Pucharu Małopolski 2020. Uczennicy serdecznie gratulujemy!!!
+  </div>
+</div>
+<div class="kolumna">
+    <b><div class="tytulnews">FINAŁ WARSZTATÓW HISTORYCZNYCH</div></b>
+    <img src="http://www.x-lo.krakow.pl/images/material_news/inne2/warsztaty.jpg" alt="Warsztaty" style="width:100%">
+    <div class="podnews">W minioną sobotę, 3 października, grupa uczniów z naszej szkoły pod opieką p. Karoliny Jedynak i p. Pauliny Klemczak wzięła udział w uroczystym zakończeniu warsztatów historycznych organizowanych przez UPJPII. Hasło przewodnie warsztatów to O tempora! O mores! O czasy! O obyczaje!
+<a href="http://www.x-lo.krakow.pl/www/news,908">Czytaj więcej</a></div>
+  </div>
+</div>
+<!-- KONIEC TRZECH NEWSÓW-->
+<div class="rzad">
+  <div class="kolumna">
+    <b><div class="tytulnews">POŻEGNANIE PANI BARBARY SĄDAG</div></b>
+<img src="http://www.x-lo.krakow.pl/images/material_news/nekrolog/nekrolog.jpg" alt="Nekrolog" style="width:100%">
+</div>
+<div class="kolumna">
+    <b><div class="tytulnews">NAPISALIŚMY DYKTANDO!</div></b>
+    <img src="http://www.x-lo.krakow.pl/images/material_news/dyktando/dyktando(1).jpg" alt="Dyktando(1)" style="width:100%">
+    <div class="podnews">1 października uczniowie X LO po raz kolejny wzięli udział w ogólnopolskim projekcie edukacyjnym. „Dyktando Niepodległościowe „Po polsku o historii” to konkurs dla uczniów i kampania promująca poprawną polszczyznę oraz znajomość podstawowych faktów i postaci współczesnej historii Polski. Organizatorami przedsięwzięcia są Fundacja „Zawsze Warto” oraz Stowarzyszenie Polonistów, które corocznie przygotowuje teksty dyktanda w konsultacji z historykiem”. W tym roku szkolnym uczestnicy mierzyli się z tekstem: ”HISTORIA WPISANA W POMNIKI”, który dotyczył twórców znanych pomników , był również fascynującą opowieścią o kulturowym wymiarze postaci historycznych. Naszym uczniom życzymy powodzenia! Dziękujemy za wytrwałość!
+<p><i>Organizatorki etapu szkolnego: Cecylia Czopek, Monika Skucińska</i></p>
+  </div>
+</div>
+<div class="kolumna">
+    <b><div class="tytulnews">DEBATY HISTORYCZNE</div></b>
+    <img src="http://www.x-lo.krakow.pl/images/material_news/historia/debaty.jpg" alt="Debaty" style="width:100%">
+    <div class="podnews">W dniu 29 września 2020 r. rozpoczynamy w XLO nową inicjatywę tj. działalność Szkolnego Klubu Debat Historycznych. Nasza szkoła przystąpiła do projektu realizowanego przez Muzeum Józefa Piłsudskiego w Sulejówku oraz Fundację Polska Debatuje.
+
+<p>Dzisiejsze spotkanie zostało poprzedzone szkoleniem w Sulejówku dla szkolnych koordynatorów Klubów Debat Historycznych, w którym udział wzięły Panie Karolina Jedynak i Paulina Klemczak. W inauguracyjnych warsztatach klubu zainteresowani uczniowie z klas 1a, 2f, 2h, 2l, i 3a uczestniczyli w 6-godzinnych warsztatach, które przybliżyły im sztukę debaty. Liczymy, że historia stanie się dla Naszych uczniów inspiracją do pasjonujących dyskusji.</p></div>
+  </div>
+</div>
+<!-- KONIEC TRZECH NEWSÓW-->
+<div class="rzad">
+  <div class="kolumna">
+    <b><div class="tytulnews">XLO W SALONIE MATURZYSTÓW</div></b>
+<img src="http://www.x-lo.krakow.pl/images/material_news/inne2/salon.jpg" alt="Salon" style="width:100%">
+<div class="podnews">„Studia? Jeśli tak, to na jakim kierunku? Jakie przedmioty zdawać dodatkowo na maturze? I jaką w ogóle przyjąć strategię, aby stworzyć sobie taki koszyk możliwości, który pozwoli podjąć studia trafione, wybrane nie w ciemno, ale w zgodzie z zainteresowaniami i dobrze rokujące na rynku pracy?”
+<p>17 września uczniowie naszej szkoły po raz kolejny uczestniczyli w warsztatach on-line w ramach „Salonu Maturzystów”. Na lekcjach wychowawczych wspólnie wysłuchali wykładu pt. Matura 2021 - przepis na sukces - w formie rozmowy z dr. Marcinem Smolikiem, dyrektorem Centralnej Komisji Egzaminacyjnej oraz zapoznali się z prezentacją: Co o maturze każdy zdający wiedzieć powinien Lecha Gawryłowa, dyrektora OKE w Krakowie. Uczniowie również po południu, indywidualnie i po zarejestrowaniu, brali udział w wykładach i prezentacjach przeznaczonych dla nich.</p>
+<p>Dziękujemy wychowawcom za udział w projekcie.</p></div>
+</div>
+<div class="kolumna">
+    <b><div class="tytulnews">CZYTAMY W X LO</div></b>
+    <img src="http://www.x-lo.krakow.pl/images/material_news/czytanie_2020/czytamy.jpg" alt="Czytamy" style="width:100%">
+    <div class="podnews">Wspólne – głośne czytanie literatury w X LO ma swoją wieloletnią tradycję, a w tym roku szkolnym, zgodnie z programem kolejnej edycji Narodowego Czytania pod patronatem Pary Prezydenckiej, wybraliśmy BALLADYNĘ JULIUSZA SŁOWACKIEGO.
+<p>Wyjątkowo, z zachowaniem zasad bezpieczeństwa, czytaliśmy na lekcjach języka polskiego. Dziękujemy uczniom i nauczycielom za udział w projekcie!</p>
+  </div>
+</div>
+<div class="kolumna">
+    <b><div class="tytulnews">ŻYCZENIA</div></b>
+    <div class="podnews">Pragniemy życzyć wszystkim uczniom, Nauczycielom, Rodzicom, Dyrekcji oraz Pracownikom szkoły udanego i owocnego roku szkolnego. Chcemy, aby w naszym liceum nigdy nie brakowało pozytywnej energii w działaniu, dużej cierpliwości oraz sumiennej pracy w dążeniu do celu. Szczególnie ciepło witamy tegorocznych pierwszoklasistów. Mamy nadzieję, że będzie to da Was rok pełen ciekawych doświadczeń i zacieśniania wspaniałych, nowych relacji. Udanego nowego roku szkolnego 2020/2021!
+<p><i>Życzy Samorząd Uczniowski X Liceum Ogólnokształcącego w Krakowie</i></p></div>
+  </div>
+</div>
+<!-- KONIEC TRZECH NEWSÓW-->
+<div class="rzad">
+  <div class="kolumna">
+    <b><div class="tytulnews"></div></b>
+<img src="http://www.x-lo.krakow.pl/images/material_news/inne2/powitanie.jpg" alt="Powitanie" style="width:100%">
+<div class="podnews">Szanowni Rodzice,<br>
+Drodzy Uczniowie!
+<p>
+1 września rozpoczynamy kolejny rok szkolny. Z wielką radością witam po dłuższej przerwie całą Społeczność X LO. Jestem przekonana, że nadchodzący rok szkolny będzie obfity w pozytywne zdarzenia. Nauczycielom przyniesie satysfakcję z pracy dydaktycznej, a naszym Uczniom radość z odkrywania tajemnic świata nauki.
+</p>
+<p>
+Szczególnie ciepło witam Uczniów klas pierwszych, którzy rozpoczynają naukę w naszym Liceum. Życzę , by czas spędzony w szkole był fascynującą przygodą poznawczą a przede wszystkim spełnił Wasze edukacyjne i osobiste marzenia. Rodzicom naszych Uczniów życzę spokoju i wytrwałości w tych niełatwych dla nas wszystkich czasach oraz dumy z różnorodnych osiągnięć dzieci!
+</p>
+<p>
+<i>Tamara Cieśla<br>
+Dyrektor X Liceum Ogólnokształcącego im. KEN w Krakowie</i>
+</p>
+</div>
+</div>
+<div class="kolumna">
+    <b><div class="tytulnews">KOMUNIKAT DYREKTORA - PIERWSZE DNI W SZKOLE</div></b>
+    <div class="podnews">Szanowni Państwo Rodzice,<br>
+Drodzy Uczniowie,
+<p>W środę, tj. 2 września, każda klasa będzie realizować 3-godzinne zajęcia z wychowawcą, o charakterze reintegracyjnym oraz edukacyjno-informacyjnym. Na tych lekcjach zostaną z uczniami szczegółowo omówione m.in. procedury bezpieczeństwa. Po zajęciach, uczniowie wracają do domu.</p>
+<p>Harmonogram zajęć z wychowawcą:<br>
+klasy I - 10.30 - 13.00.</p>
+<p>O godz. 13.00 uczniowie, którzy kontynuują naukę j. niemieckiego i j.hiszpańskiego, napiszą testy z tych języków.</p>
+<p>klasy II - 7.30 - 10.00</p>
+<p>klasy III - 10.30 - 13.00</p>
+<p>Planowane zebrania Rodziców:
+klasy I - 3 września (czwartek), godz.16.30<br>
+1a - s.1, wejście główne (1)<br>
+1b - s.3, wejście główne (1)<br>
+1c - s.4, wejście główne (1)<br>
+1d - s.5, wejście główne (1)<br>
+1e - s.6, wejście boczne (2), po prawej stronie<br>
+1f - s.7, wejście boczne (2), po prawej stronie<br>
+1g - s.8, wejście boczne (2), po prawej stronie.</p>
+<p>klasy III - 10 września (czwartek)<br>
+klasy II po SP - 16 września (środa)<br>
+klasy II po gimnazjum - 17 września (czwartek).</p>
+<p>Szczegółowe informacje organizacyjne dla Rodziców klas II i III zostaną podane w dzienniku Librus, w tygodniu, w którym odbędą się zebrania.</p>
+<p>Po wejściu do budynku szkoły, proszę o przestrzeganie, zgodnie z procedurami, zasad rygoru sanitarnego (w szczególności: dezynfekcja rąk, zasłanianie maseczką lub przyłbicą ust i nosa).</p>
+<p>Tamara Cieśla,<br>
+Dyrektor X LO</p>
+  </div>
+</div>
+<div class="kolumna">
+    <b><div class="tytulnews">BEZPIECZEŃSTWO W DRODZE I ZE SZKOŁY</div></b>
+    <div class="podnews">Bezpieczeństwo w drodze i ze szkoły – wspólny list MEN, MI i GIS -><a href="https://www.gov.pl/web/edukacja/bezpieczenstwo-uczniow-w-srodkach-transportu-zbiorowego--wspolny-list-szefow-men-mi-i-gis">link</a></div>
+  </div>
+</div>
+<!-- KONIEC TRZECH NEWSÓW-->
+<div class="rzad">
+  <div class="kolumna">
+    <b><div class="tytulnews">ROZPOCZĘCIE ROKU SZKOLNEGO 2020/2021</div></b>
+<div class="podnews">Szczegółowe informacje dotyczące rozpoczęcia roku szkolnego<br>->
+<a href="http://www.x-lo.krakow.pl/dok/Rozpoczecie_roku_szkolnego_2020_2021.pdf">link</a>
+</div>
+</div>
+</div>
+<br>
+<div class="wczesniejsze"><div class="podnews" style="text-align:center"><a href="http://www.x-lo.krakow.pl/www/news,,25,5">Wcześniejsze</a></div></div>
+<br>
+<div class="rzad">
+  <div class="kolumna2normalnie">
+<div class="podnews" style="font-size: 0.8vw; text-align:center"><a href="https://www.google.pl/maps/place/X+Liceum+Og%C3%B3lnokszta%C5%82c%C4%85ce+im.+Komisji+Edukacji+Narodowej/@50.0692604,19.9383884,17z/data=!3m1!4b1!4m5!3m4!1s0x47165b04545ac0bf:0x6da788b8cb96e8ef!8m2!3d50.0692604!4d19.9405771">Tu jesteśmy</a> |
+<a href="http://www.x-lo.krakow.pl/niepodlegla/index.html">Dla Niepodległej</a> | 
+<a href="http://www.x-lo.krakow.pl/www/art,53">Media o nas</a> | 
+<a href="http://www.x-lo.krakow.pl/www/art,54">MCHE</a> | 
+<a href="http://www.x-lo.krakow.pl/suxlo/index.html">Samorząd Uczniowski</a> |
+<a href="http://www.x-lo.krakow.pl/www/art,45">Teatr szkolny</a> | 
+<a href="http://www.x-lo.krakow.pl/bxlo/aktualnosci.html">Biblioteka szkolna</a> | 
+<a href="http://www.x-lo.krakow.pl/spp/index.html">Szkolny psycholog</a> | 
+<a href="http://www.x-lo.krakow.pl/sukcesy_uczniow.pdf">Sukcesy uczniów</a> | 
+<a href="http://www.x-lo.krakow.pl/uczelnie.pdf">Współpraca z uczelniami</a> | 
+<a href="http://www.x-lo.krakow.pl/wolontariat/index.html">Wolontariat</a> | 
+<a href="http://www.x-lo.krakow.pl/sport.pdf">Sport w X LO</a> | 
+<a href="https://naszeszkoly.krakow.pl/szkola/2762,x-liceum-ogolnoksztalcace-w-krakowie/">Nasze Szkoły</a> | 
+<a href="http://www.x-lo.krakow.pl/materialy_news/jeden_procent/podatek2.png">1% podatku</a> | 
+<a href="http://www.bip.krakow.pl/?bip_id=204">BIP</a>
+</div>
+</div>
+</div>
+<div class="rzad">
+<div class="kolumna2tel">
+<div class="podnews" style="text-align:center"><a href="https://www.google.pl/maps/place/X+Liceum+Og%C3%B3lnokszta%C5%82c%C4%85ce+im.+Komisji+Edukacji+Narodowej/@50.0692604,19.9383884,17z/data=!3m1!4b1!4m5!3m4!1s0x47165b04545ac0bf:0x6da788b8cb96e8ef!8m2!3d50.0692604!4d19.9405771">Tu jesteśmy</a>
+</div>
+</div>
+<div class="kolumna2tel">
+<div class="podnews" style="text-align:center">
+<a href="http://www.x-lo.krakow.pl/niepodlegla/index.html">Dla Niepodległej</a>
+</div>
+</div>
+<div class="kolumna2tel">
+<div class="podnews" style="text-align:center">
+<a href="http://www.x-lo.krakow.pl/www/art,53">Media o nas</a>
+</div>
+</div> 
+<div class="kolumna2tel">
+<div class="podnews" style="text-align:center">
+<a href="http://www.x-lo.krakow.pl/www/art,54">MCHE</a>
+</div>
+</div>
+<div class="kolumna2tel">
+<div class="podnews" style="text-align:center">
+<a href="http://www.x-lo.krakow.pl/suxlo/index.html">Samorząd Uczniowski</a>
+</div>
+</div>
+<div class="kolumna2tel">
+<div class="podnews" style="text-align:center">
+<a href="http://www.x-lo.krakow.pl/www/art,45">Teatr szkolny</a>
+</div>
+</div>
+<div class="kolumna2tel">
+<div class="podnews" style="text-align:center">
+<a href="http://www.x-lo.krakow.pl/bxlo/aktualnosci.html">Biblioteka szkolna</a>
+</div>
+</div>
+<div class="kolumna2tel">
+<div class="podnews" style="text-align:center">
+<a href="http://www.x-lo.krakow.pl/spp/index.html">Szkolny psycholog</a>
+</div>
+</div>
+<div class="kolumna2tel">
+<div class="podnews" style="text-align:center">
+<a href="http://www.x-lo.krakow.pl/sukcesy_uczniow.pdf">Sukcesy uczniów</a>
+</div>
+</div>
+<div class="kolumna2tel">
+<div class="podnews" style="text-align:center">
+<a href="http://www.x-lo.krakow.pl/uczelnie.pdf">Współpraca z uczelniami</a>
+</div>
+</div>
+<div class="kolumna2tel">
+<div class="podnews" style="text-align:center">
+<a href="http://www.x-lo.krakow.pl/wolontariat/index.html">Wolontariat</a>
+</div>
+</div>
+<div class="kolumna2tel">
+<div class="podnews" style="text-align:center">
+<a href="http://www.x-lo.krakow.pl/sport.pdf">Sport w X LO</a>
+</div>
+</div>
+<div class="kolumna2tel">
+<div class="podnews" style="text-align:center">
+<a href="https://naszeszkoly.krakow.pl/szkola/2762,x-liceum-ogolnoksztalcace-w-krakowie/">Nasze Szkoły</a>
+</div>
+</div>
+<div class="kolumna2tel">
+<div class="podnews" style="text-align:center">
+<a href="http://www.x-lo.krakow.pl/materialy_news/jeden_procent/podatek2.png">1% podatku</a>
+</div>
+</div> 
+<div class="kolumna2tel">
+<div class="podnews" style="text-align:center">
+<a href="http://www.bip.krakow.pl/?bip_id=204">BIP</a>
+</div>
+</div>
+</div>
+<div class="loader-wrapper">
+      <span class="loader"><span class="loader-inner"></span></span>
+    </div>
+<script>
+        $(window).on("load",function(){
+          $(".loader-wrapper").fadeOut("slow");
+        });
+    </script>
+   </body>
+</html>
