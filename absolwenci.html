@@ -1,0 +1,660 @@
+<html>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+<head>
+<title>X Liceum Ogólnokształcące w Krakowie im. KEN</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Yantramanav:wght@700;900&display=swap,News+Cycle:wght@700&display=swap"
+rel="stylesheet">
+<style>
+html, body {
+  height: 100%;
+  margin: 0;
+  overflow-x: hidden;
+  overflow-y: visible;
+  background-image: url('https://scontent.fktw5-1.fna.fbcdn.net/v/t1.15752-9/133832333_422391252215182_5439948955064273770_n.png?_nc_cat=105&cb=846ca55b-ee17756f&ccb=2&_nc_sid=ae9488&_nc_ohc=TVfEOICzBd4AX9MSPvG&_nc_ht=scontent.fktw5-1.fna&oh=35de813962b3833d433703268c8a0183&oe=6010517A');
+  background-repeat: no-repeat;
+  background-attachment: fixed;  
+  background-size: cover;
+}
+.loader-wrapper {
+  width: 10000px;
+  height: 10000px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: White;
+  display:flex;
+}
+#left{
+     flex: 1; 
+     left:0;
+     width:300px;
+     background: linear-gradient(DodgerBlue, DeepSkyBlue);  
+     height:100vh;
+     position:fixed;
+     top:0;
+}
+@media screen and (max-width:530px) and (max-height: 768px) {
+  #left {
+     width:25vw;
+  }
+}
+#center {
+     margin-top:12px;
+     margin-left:310px;
+     margin-right: -8px;
+     flex: 3;
+}
+@media screen and (max-width:530px) and (max-height: 768px) {
+  #center {
+     margin-left:25vw;
+  }
+}
+span b {
+     font-family: "Yantramanav", sans-serif;
+     color: white;
+     font-size: 5.3vw;
+     font-size: 10.6vh;
+}
+span  {
+     font-family: "Yantramanav", sans-serif;
+     color: white;
+     font-size: 5.2vh;
+}
+.podspan {
+     font-family: "Yantramanav", sans-serif;
+     color: white;
+     font-size: 2vh;
+}
+.tytulnews {
+     font-family: "News Cycle", sans-serif;
+     color: #757471;
+     font-size: 1vw;
+     text-transform:uppercase;
+     letter-spacing: 2px;
+}
+@media screen and (max-width:768px) and (max-height: 1920px) {
+  .tytulnews {
+     font-size: 3vw;
+  }
+}
+.podnews {
+     font-family: "News Cycle", sans-serif;
+     color: Grey;
+     font-size: 1vw;
+     text-align: justify;
+}
+@media screen and (max-width:768px) and (max-height: 1920px) {
+  .tytulnews, .podnews {
+     font-size: 3vw;
+  }
+}
+div.kolumna a:link, .kolumna a:visited, .kolumna a:hover, .kolumna a:active, .kolumna2normalnie a:link, .kolumna2normalnie a:visited, .kolumna2normalnie a:hover, .kolumna2normalnie a:active, kolumna2tel a:link, .kolumna2tel a:visited, .kolumna2tel a:hover, .kolumna2tel a:active {
+  color: Grey;
+  background-color: transparent;
+  text-decoration: underline;
+}
+div.kolumna2tel a:link {
+  color: Grey;
+  background-color: transparent;
+  text-decoration: underline;
+}
+div.kolumna2tel a:visited {
+  color: Grey;
+  background-color: transparent;
+  text-decoration: underline;
+}
+div.kolumna2tel a:hover {
+  color: Grey;
+  background-color: transparent;
+  text-decoration: underline;
+}
+div.kolumna2tel a:active {
+  color: Grey;
+  background-color: transparent;
+  text-decoration: underline;
+}
+.kolumna {
+  float: left;
+  width: 95%;
+  padding: 5px;
+}
+.kolumna2normalnie {
+  float: left;
+  width: 95%;
+  padding: 5px;
+  display: block;
+  margin-left: auto;
+  font-size: 0.8vw;
+}
+.kolumna2tel {
+  float: left;
+  width: 95%;
+  padding: 5px;
+  display: none;
+}
+@media screen and (max-width:1024px) and (max-height: 768px) {
+        .kolumna2normalnie {
+        display: none;
+}
+}
+@media screen and (max-width:1024px) and (max-height: 768px) {
+        .kolumna2tel {
+        display: block;
+}
+}
+.rzad::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+@media screen and (max-width:1024px) and (max-height: 768px) {
+  .kolumna {
+    width: 95%;
+  }
+}
+div.wczesniejsze a:link {
+  color: Grey;
+  background-color: transparent;
+  text-decoration: underline;
+}
+div.wczesniejsze a:visited {
+  color: Grey;
+  background-color: transparent;
+  text-decoration: underline;
+}
+div.wczesniejsze a:hover {
+  color: Grey;
+  background-color: transparent;
+  text-decoration: underline;
+}
+div.wczesniejsze a:active {
+  color: Grey;
+  background-color: transparent;
+  text-decoration: underline;
+}
+.wczesniejsze {
+     font-family: "News Cycle", sans-serif;
+     color: Grey;
+     font-size: 1vw;
+     font-weight: bold;
+     letter-spacing: 2px;
+     text-transform:uppercase;
+}
+.naglowek {
+     font-family: "Helvetica";
+     color: SlateGrey;
+     font-size: 1.3vw;
+     letter-spacing: 2px;
+}
+@media screen and (max-width:530px) and (max-height: 768px) {
+  .naglowek {
+     font-size: 3vw;
+     margin-left: 2vw;
+  }
+}
+.myButton {
+	box-shadow: 0px 6px 13px -4px DarkGrey;
+	background:linear-gradient(to bottom, #ffffff 5%, #f6f6f6 100%);
+	background-color:#ffffff;
+	border-radius:42px;
+	display:inline-block;
+	cursor:pointer;
+	color:DodgerBlue;
+	font-family:Arial;
+	font-size:2vh;
+	font-weight:bold;
+        padding:2vh 8vh;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #ffffff;
+	transition: color 0.3s, padding 0.3s;
+}
+.stronaglownanormalnie{
+	display: block;
+}
+.stronaglownatel {
+        display: none;
+}
+@media screen and (max-width:1023px) and (max-height: 767px) {
+        .stronaglownanormalnie {
+        display: none;
+}
+}
+@media screen and (max-width:1023px) and (max-height: 767px) {
+        .stronaglownatel {
+        display: block;
+}
+}
+.COVID-19normalnie{
+	display: block;
+}
+.COVID-19tel {
+        display: none;
+}
+@media screen and (max-width:1023px) and (max-height: 767px) {
+        .COVID-19normalnie {
+        display: none;
+}
+}
+@media screen and (max-width:1023px) and (max-height: 767px) {
+        .COVID-19tel {
+        display: block;
+}
+}
+.Oszkolenormalnie{
+	display: block;
+}
+.Oszkoletel {
+        display: none;
+}
+@media screen and (max-width:1023px) and (max-height: 767px) {
+        .Oszkolenormalnie {
+        display: none;
+}
+}
+@media screen and (max-width:1023px) and (max-height: 767px) {
+        .Oszkoletel {
+        display: block;
+}
+}
+.Rekrutacjanormalnie{
+	display: block;
+}
+.Rekrutacjatel {
+        display: none;
+}
+@media screen and (max-width:1023px) and (max-height: 767px) {
+        .Rekrutacjanormalnie {
+        display: none;
+}
+}
+@media screen and (max-width:1023px) and (max-height: 767px) {
+        .Rekrutacjatel {
+        display: block;
+}
+}
+.Moodlenormalnie{
+	display: block;
+}
+.Moodletel {
+        display: none;
+}
+@media screen and (max-width:1023px) and (max-height: 767px) {
+        .Moodlenormalnie {
+        display: none;
+}
+}
+@media screen and (max-width:1023px) and (max-height: 767px) {
+        .Moodletel {
+        display: block;
+}
+}
+.Kontaktnormalnie{
+	display: block;
+}
+.Kontakttel {
+        display: none;
+}
+@media screen and (max-width:1023px) and (max-height: 767px) {
+        .Kontaktnormalnie {
+        display: none;
+}
+}
+@media screen and (max-width:1023px) and (max-height: 767px) {
+        .Kontakttel {
+        display: block;
+}
+}
+.myButton:hover {
+        color: LightGreen;
+	position:relative;
+	padding:2vh 9.6vh;
+	position:relative;
+}
+.myButton:active {
+	position:relative;
+	top:1px;
+}
+.myButton2 {
+	box-shadow: 0px 6px 13px -4px DarkGrey;
+	background:linear-gradient(to bottom, #ffffff 5%, #f6f6f6 100%);
+	background-color:#ffffff;
+	border-radius:42px;
+	display:inline-block;
+	cursor:pointer;
+	color:DodgerBlue;
+	font-family:Arial;
+	font-size:2vh;
+	font-weight:bold;
+	padding:2vh 10.26vh;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #ffffff;
+	transition: color 0.3s, padding 0.3s;
+}
+.myButton2:hover {
+        color: LightGreen;
+	position:relative;
+	padding:2vh 11.86vh;
+	position:relative;
+}
+.myButton2:active {
+	position:relative;
+	top:1px;
+}
+.myButton3 {
+	box-shadow: 0px 6px 13px -4px DarkGrey;
+	background:linear-gradient(to bottom, #ffffff 5%, #f6f6f6 100%);
+	background-color:#ffffff;
+	border-radius:42px;
+	display:inline-block;
+	cursor:pointer;
+	color:DodgerBlue;
+	font-family:Arial;
+	font-size:2vh;
+	font-weight:bold;
+	padding:2vh 10.66vh;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #ffffff;
+	transition: color 0.3s, padding 0.3s;
+}
+.myButton3:hover {
+        color: LightGreen;
+	position:relative;
+	padding:2vh 12.26vh;
+	position:relative;
+}
+.myButton3:active {
+	position:relative;
+	top:1px;
+}
+.myButton4 {
+	box-shadow: 0px 6px 13px -4px DarkGrey;
+	background:linear-gradient(to bottom, #ffffff 5%, #f6f6f6 100%);
+	background-color:#ffffff;
+	border-radius:42px;
+	display:inline-block;
+	cursor:pointer;
+	color:DodgerBlue;
+	font-family:Arial;
+	font-size:2vh;
+	font-weight:bold;
+	padding:2vh 9.6vh;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #ffffff;
+	transition: color 0.3s, padding 0.3s;
+}
+.myButton4:hover {
+        color: LightGreen;
+	position:relative;
+	padding:2vh 11.2vh;
+	position:relative;
+}
+.myButton4:active {
+	position:relative;
+	top:1px;
+}
+.myButton5 {
+	box-shadow: 0px 6px 13px -4px DarkGrey;
+	background:linear-gradient(to bottom, #ffffff 5%, #f6f6f6 100%);
+	background-color:#ffffff;
+	border-radius:42px;
+	display:inline-block;
+	cursor:pointer;
+	color:DodgerBlue;
+	font-family:Arial;
+	font-size:2vh;
+	font-weight:bold;
+	padding:2vh 10.93vh;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #ffffff;
+	transition: color 0.3s, padding 0.3s;
+}
+.myButton5:hover {
+        color: LightGreen;
+	position:relative;
+	padding:2vh 12.53vh;
+	position:relative;
+}
+.myButton5:active {
+	position:relative;
+	top:1px;
+}
+.myButton6 {
+	box-shadow: 0px 6px 13px -4px DarkGrey;
+	background:linear-gradient(to bottom, #ffffff 5%, #f6f6f6 100%);
+	background-color:#ffffff;
+	border-radius:42px;
+	display:inline-block;
+	cursor:pointer;
+	color:DodgerBlue;
+	font-family:Arial;
+	font-size:2vh;
+	font-weight:bold;
+	padding:2vh 10.93vh;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #ffffff;
+	transition: color 0.3s, padding 0.3s;
+}
+.myButton6:hover {
+        color: LightGreen;
+	position:relative;
+	padding:2vh 12.53vh;
+	position:relative;
+}
+.myButton6:active {
+	position:relative;
+	top:1px;
+}
+#datetime {
+     font-family: "Yantramanav", sans-serif;
+     color: white;
+     font-size: 2vh;
+}
+</style>
+</head>
+<body>
+<div id="left"><center><br><br><span><b>X</b>LO</span><div class="podspan">im. Komisji Edukacji Narodowej w Krakowie</div>
+<div class="Stronaglownanormalnie"><br style="line-height: 5vh"><a href="Stronaglowna.html" class="myButton">Strona główna</a></div>
+<div class="Stronaglownatel"><br style="line-height: 5vh"><a href="Stronaglowna.html"><img src="dom.svg" width="40vw"></a></div>
+<div class="COVID-19normalnie"><p><a href="COVID-19.html" class="myButton2">COVID-19</a></p></div>
+<div class="COVID-19tel"><p><a href="COVID-19.html"><img src="koronawirus.svg" width="40vw"></a></p></div>
+<div class="Oszkolenormalnie"><p><a href="Oszkole.html" class="myButton3">O szkole</a></p></div>
+<div class="Oszkoletel"><p><a href="Oszkole.html"><img src="szkola.svg" width="40vw"></a></p></div>
+<div class="Rekrutacjanormalnie"><p><a href="Rekrutacja.html" class="myButton4">Rekrutacja</a></p></div>
+<div class="Rekrutacjatel"><p><a href="Rekrutacja.html"><img src="dlugopis.svg" width="40vw"></a></p></div>
+<div class="Moodlenormalnie"><p><a href="https://www.x-lo.krakow.pl/moodle/index.php" class="myButton5">Moodle</a></p></div>
+<div class="Moodletel"><p><a href="https://www.x-lo.krakow.pl/moodle/index.php"><img src="moodle.svg" width="40vw"></a></p></div>
+<div class="Kontaktnormalnie"><p><a href="Kontakt.html" class="myButton6">Kontakt</a></p></div>
+<div class="Kontakttel"><p><a href="Kontakt.html"><img src="chmura.svg" width="40vw"></a></p></div>
+</center></div>
+<div id="center"><div class="naglowek">Znani absolwenci</div>
+<br>
+<div class="rzad">
+<div class="kolumna">
+<b><div class="tytulnews"></div></b>
+   <div class="podnews"><strong>Wojciech Misiąg</strong> - ekonomista, w latach 1989-1994 wiceminister finansów, w latach 2011-2013 wiceprezes Najwyższej Izby Kontroli. Ukończył studia w Szkole Głównej Planowania i Statystyki, specjalizując się w zakresie ekonomii. Do 1994 roku był podsekretarzem stanu w Ministerstwie Finansów, odpowiadając za politykę finansową i budżet. Współpracował przy tworzeniu reform gospodarczych. Doradca najwyższej Izby Kontroli oraz wiceprezes NIK. Odznaczony Krzyżem Kawalerskim Orderu Odrodzenia Polski.
+<p>
+</p>
+</div>
+</div>
+<div class="kolumna">
+<b><div class="tytulnews"></div></b>
+   <div class="podnews"><strong>Teresa Starmach</strong> - nauczycielka, działaczka samorządowa i społeczna, w latach 1998–2002 wiceprezydent Krakowa. Ukończyła studia na Wydziale Matematyczno-Fizyczno-Technicznym na Uniwersytecie Pedagogicznym. W 1980 roku wstąpiła do Solidarności. W 2002 roku otrzymała Srebrny Krzyż Zasługi. W 2010 roku została wyróżniona medalem ,,Niezłomnym w słowie", a dwa lata później prezydent Bronisław Komorowski odznaczył ją Krzyżem Kawalerskim Orderu Odrodzenia Polski.
+<p>
+</p>
+</div>
+</div>
+<div class="kolumna">
+<b><div class="tytulnews"></div></b>
+   <div class="podnews"><strong>Ewa Bukojemska </strong>- pianistka , pedagog, profesor i długoletni kierownik Katedry Fortepianu Akademii Muzycznej w Krakowie. Ukończyła studia pianistyczne w krakowskiej Akademii Muzycznej. Prowadziła klasy fortepianu i kursy mistrzowskie w m.in w Buenos Aires czy Meksyku. Koncertowała z wieloma znanymi dyrygentami m.in. Krzysztofem Missonem. W 2011r została odznaczona przez ministra kultury i dziedzictwa narodowego Srebrnym Medalem Zasłużony Kulturze Gloria Artis.
+<p>
+</p>
+</div>
+</div>
+<div class="kolumna">
+<b><div class="tytulnews"></div></b>
+   <div class="podnews"><strong>Jacek Drozdowski </strong>– grafik. W latach 1978-1987 jeden z wykładowców krakowskiej Akademii Sztuk Pięknych.&nbsp;
+<p>
+</p>
+</div>
+</div>
+<div class="kolumna">
+<b><div class="tytulnews"></div></b>
+   <div class="podnews"><strong>Elżbieta Penderecka</strong> – polska działaczka kulturalna, inicjatorka konkursów muzycznych, członkini władz międzynarodowych fundacji muzycznych. Założycielka Fundacji Mozartowskiej. W 2005r. zainicjowała powstanie Orkiestry Akademii Beethovenowskiej, założonej z najzdolniejszych studentów i absolwentów Akademii Muzycznej w Krakowie.
+<p>
+</p>
+</div>
+</div>
+<div class="kolumna">
+<b><div class="tytulnews"></div></b>
+   <div class="podnews"><strong>Elżbieta Towarnicka </strong>– polska śpiewaczka operowa. Ukończyła Akademię Muzyczną w Krakowie. Już podczas studiów występowała w Operze Krakowskiej. Wydała kilkanaście solowych albumów oraz brała udział w nagraniach płyt innych artystów. W 2000r nagrała pierwszą niefilmową płytę pt. ,,Ave Maria”. Album został nominowany do nagrody ,,Fryderyk”.
+<p>
+</p>
+</div>
+</div>
+<div class="kolumna">
+<b><div class="tytulnews"></div></b>
+   <div class="podnews"><strong>Anna Szałapak</strong> – polska piosenkarka, wykonawczyni poezji śpiewanej, dr. nauk humanistycznych w zakresie etnologii. Członkini krakowskiego kabaretu pt. ,,Piwnica pod Baranami’’, pieśniarka, wykonawczyni utworów najsłynniejszych polskich poetów i kompozytorów.
+<p>
+</p>
+</div>
+</div>
+<div class="kolumna">
+<b><div class="tytulnews"></div></b>
+   <div class="podnews"><strong>Zdobysław Milewski </strong>– polski polityk, urzędnik samorządowy, w latach 1992-1993 rzecznik prasowy rządu, poseł na Sejm III kadencji. Ukończył studia na Wydziale Filozoficzno-Historycznym Uniwersytetu Jagiellońskiego w Krakowie. W 2008r. został odznaczony przez prezydenta Lecha Kaczyńskiego Krzyżem Oficerskim Orderu Odrodzenia Polski.
+<p>
+</p>
+</div>
+</div>
+<div class="kolumna">
+<b><div class="tytulnews"></div></b>
+   <div class="podnews"><strong>Małgorzata Olkuska</strong> – krakowska artystka zajmująca się rzeźbiarstwem i medalierstwem. Studiowała na Wydziale Rzeźby krakowskiej Akademii Sztuk Pięknych. W 2012r. została laureatką Nagrody Miasta Kraków.
+<p>
+</p>
+</div>
+</div>
+<div class="kolumna">
+<b><div class="tytulnews"></div></b>
+   <div class="podnews"><strong>Bogusław Sonik</strong> - polityki, dziennikarz, samorządowiec, działacz opozycji demokratycznej w okresie PRL, od 2004 do 2014 deputowany do Parlamentu Europejskiego VI i VII kadencji, poseł na Sejm w VIII kadencji. Ukończył studia na wydziale prawa i administracji na Uniwersytecie Jagiellońskim. W 1996 roku objął stanowisko dyrektora Festiwalu Kraków 2000 - Europejska Stolica Kultury. W 2014 roku odznaczony Krzyżem Komandorskim Orderu odrodzenia Polski. W 2010 roku został uznany za najbardziej pracowitego europosła.
+<p>
+</p>
+</div>
+</div>
+<div class="kolumna">
+<b><div class="tytulnews"></div></b>
+   <div class="podnews"><strong>Rafał Bochenek </strong>- polski polityk i samorządowiec. W latach 2016-2017 rzecznik prasowy rządu Beaty Szydło, w latach 2017-2018 podsekretarz stanu w Kancelarii Prezesa Rady Ministrów. Ukończył studia prawnicze na Wydziale Prawa i Administracji Uniwersytetu Jagiellońskiego.
+<p>
+</p>
+</div>
+</div>
+<div class="kolumna">
+<b><div class="tytulnews"></div></b>
+   <div class="podnews"><strong>Krystyna Alicja Jezierska </strong>– krakowska poetka. Jej wiersze zamieszczane były na łamach: Życia Literackiego, Przekroju, Poezji Dzisiaj, publikowanie od piętnastu lat w Tygodniku Salwatorskim oraz w innych licznych almanachach. Poetyckie ballady autorki są wykonywane przez sławnych artystów i pieśniarzy.
+<p>
+</p>
+</div>
+</div>
+<div class="kolumna">
+<b><div class="tytulnews"></div></b>
+   <div class="podnews"><strong>Krzysztof Burnetko </strong>– polski dziennikarz prasowy i publicysta. Ukończył prawo na Uniwersytecie Jagiellońskim. W latach 80. współredagował podziemne pismo "Promieniści". Był korespondentem Rozgłośni Polskiej Radia Wolna Europa. W latach 1988–2005 był dziennikarzem związanym z "Tygodnikiem Powszechnym". Następnie przeszedł do redakcji "Polityki".<br>
+Jest autorem lub współautorem kilkunastu książek, w tym kilku przygotowanych wraz z Witoldem Beresiem w formie wywiadu-rzeki: z Markiem Edelmanem, Krzysztofem Kozłowskim oraz Januszem Onyszkiewiczem. Razem opublikowali także tom poświęcony reporterowi Ryszardowi Kapuścińskiemu (Kapuściński: Nie ogarniam świata) oraz rozmowę z księdzem Stanisławem Musiałem (Duchowny niepokorny). Wspólnie z Jerzym Skoczylasem napisał książkę o Lechu Wałęsie Wałęsa. Ludzie. Epoka. Laureat wielu nagród m.in. nagrodą Wydawców Książki Historycznej Klio za biografię Marek Edelman. Życie. Po prostu.<br>
+Odznaczony Złotym Krzyżem Zasługi (2011) oraz Krzyżem Kawalerskim Order Odrodzenia Polski (2015). Członek Stowarzyszenia Pracowników, Współpracowników i Przyjaciół Rozgłośni Polskiej Radia Wolna Europa Imienia Jana Nowaka-Jeziorańskiego w Warszawie.
+<p>
+</p>
+</div>
+</div>
+<div class="kolumna">
+<b><div class="tytulnews"></div></b>
+   <div class="podnews"><strong>Maciek Bochniak</strong> - reżyser i scenarzysta (absolwent Wyższego Studium Scenariuszowego PWSFTiT w Łodzi). Autor filmów dokumentalnych „Przyjęcie”, „Miliard Szczęśliwych Ludzi” oraz „Ethiopiques - Revolt of the soul”, a także fabularnych: krótkometrażowego „Pokój” oraz nagrodzonego nagrodą im. Kuby Morgensterna „Perspektywa” pełnometrażowego „Disco Polo”, który w kinach zobaczyło niemal 900.000 widzów. Wraz z Krzysztofem Łukaszewiczem, reżyser serialu sensacyjnego "Belfer. Sezon 2".
+<p>
+</p>
+</div>
+</div>
+<div class="kolumna">
+<b><div class="tytulnews"></div></b>
+   <div class="podnews"><strong>Michał Hernik</strong> - pasjonat rajdów motocyklowych, nowoczesny przedsiębiorca, filantrop. Studiował zarządzanie i marketing na AGH. Stworzył firmę informatyczną – jedną z pierwszych w Polsce internetowych platform, która łączyła za pomocą sieci firmy farmaceutyczne, apteki i hurtownie leków. Od czasów licealnych pasjonował się sportem motocyklowym. Motorem zwiedził afrykańskie trasy Maroka, Mauretanii, Mali. Ścigał się w Emiratach Arabskich i Maroku. Wziął udział w uznawanym za najtrudniejszy na świecie Rajdzie Dakar, gdzie w ekstremalnym upale na bezdrożach Argentyny zmarł z powodu przegrzania organizmu na końcowych kilometrach 3. etapu, tuż przed swoimi czterdziestymi urodzinami w styczniu 2015 roku. Działał dobroczynnie np. pomógł sfinansować budowę sierocińca dla dzieci w Kamerunie. Polski dominikanin o. Dariusz prowadzący przytułek wspominał: „Spotkałem skromnego, spokojnego człowieka, w którego obecności po prostu chciało się pozostawać jak najdłużej (…) tu w Kamerunie modlimy się za niego.”
+<p>
+</p>
+</div>
+</div>
+<div class="kolumna">
+<b><div class="tytulnews"></div></b>
+   <div class="podnews"><strong>Andrzej Kulig</strong> - III Zastępca Prezydenta Miasta Krakowa ds. Polityki Społecznej, Kultury i Promocji Miasta. Pracownik naukowy Katedry Prawa Ustrojowego Porównawczego Uniwersytetu Jagiellońskiego, dr hab. prawa konstytucyjnego, autor licznych publikacji naukowych. Do 2014 roku był zatrudniony na stanowisku Dyrektora Szpitala Uniwersyteckiego w Krakowie.
+<p>
+</p>
+</div>
+</div>
+<div class="kolumna">
+<b><div class="tytulnews"></div></b>
+   <div class="podnews"><strong>Olga Frycz</strong> - polska aktorka, kilkakrotnie nominowana do Polskich Nagród Filmowych w kategorii najlepsza drugoplanowa rola kobieca, występuje w wielu znanych polskich serialach np. M jak miłość, Londyńczycy, Na dobre i na złe, Dom nad rozlewiskiem, Miłość nad rozlewiskiem, Ojciec Mateusz, swoją karierę zaczęła już w 1995 roku.
+<p>
+</p>
+</div>
+</div>
+<div class="kolumna">
+<b><div class="tytulnews"></div></b>
+   <div class="podnews"><strong>Katarzyna Zimmerer</strong> - dziennikarka i pisarka, felietonistka ,,Tygodnika Powszechnego’’. W 2004 roku ukazała się jej książka pt. ,,Zamordowany świat: losy Żydów w Krakowie 1939-1945’’, za którą w czerwcu tego samego roku uhonorowana została nagrodą Krakowskiej Książki Miesiąca.
+<p>
+</p>
+</div>
+</div>
+<div class="kolumna">
+<b><div class="tytulnews"></div></b>
+   <div class="podnews"><strong>Anna Okońska-Walkowicz</strong> - nauczyciel akademicki, działacz społeczny, polityk. Absolwentka Uniwersytetu Jagiellońskiego. Doktor nauk humanistycznych (specjalność pedagogika). Do 2013 roku pełniła funkcję II Zastępcy Prezydenta Miasta Krakowa ds. Edukacji i Spraw Społecznych. Na IX Zwyczajnym Krajowym Zjeździe Delegatów Społecznego Towarzystwa Oświatowego została wybrana prezesem Towarzystwa.
+<p>
+</p>
+</div>
+</div>
+<div class="kolumna">
+<b><div class="tytulnews"></div></b>
+   <div class="podnews"><strong>Marek Zuber</strong> - polski ekonomista, analityk rynków finansowych, felietonista, ekspert i doradca finansowy. Jest często zapraszanym przez prasę ekspertem ekonomicznym w kwestiach prognoz makroekonomicznych i rynkowych. Zasiada w wielu radach nadzorczych. Jest laureatem nagrody „Doradcy Politycznego Roku 2006” przyznawanej przez World Connect.
+<p>
+</p>
+</div>
+</div>
+<div class="kolumna">
+<b><div class="tytulnews"></div></b>
+   <div class="podnews"><strong>Ks. prof. Janusz Mastalski</strong>– biskup pomocniczy archidiecezji krakowskiej, profesor nauk teologicznych. W 2008 r. koordynował organizację Wydziału Nauk Społecznych UPJPII, którego dziekanem był w latach 2008-2014. W latach 2014-2018 zajmował stanowisko prorektora UPJPII ds. studenckich i dydaktyki. W 2017 r. objął funkcję rektora Wyższego Seminarium Duchownego Archidiecezji Krakowskiej. Współpracował również z Uniwersytetem Pedagogicznym w Krakowie oraz Wyższą Szkołą Humanitas w Sosnowcu.
+<p>
+</p>
+</div>
+</div>
+<div class="kolumna">
+<b><div class="tytulnews"></div></b>
+   <div class="podnews"><strong>Andrzej Sołtysik</strong> - polski dziennikarz radiowy i telewizyjny, filmoznawca, prezenter telewizji TVN.
+<p>
+</p>
+</div>
+</div>
+<div class="kolumna">
+<b><div class="tytulnews"></div></b>
+   <div class="podnews"><strong>Łukasz Gibała</strong> - polski polityk i przedsiębiorca, doktor nauk humanistycznych, poseł na Sejm VI i VII kadencji, radny Krakowa.
+<p>
+</p>
+</div>
+</div>
+<div class="kolumna">
+<b><div class="tytulnews"></div></b>
+   <div class="podnews"><strong>Tomasz Ponikło</strong> - redaktor naczelny Wydawnictwa WAM i Wydawnictwa Mando. Dawniej dziennikarz i redaktor "Tygodnika Powszechnego", pracownik Fundacji Chrześcijańskiej Znak, publicysta. Autor kilku książek. Z wykształcenia socjolog.
+<p>
+</p>
+</div>
+</div>
+<div class="kolumna">
+<b><div class="tytulnews"></div></b>
+   <div class="podnews"><strong>Joanna Maro</strong> - reżyserka i scenarzystka filmowa. Bohaterami jej dokumentów są wybitne osobowości, m.in. żołnierze wyklęci, papież Jan Paweł II.
+</div>
+</div>
+</div>
+<div class="loader-wrapper">
+      <span class="loader"><span class="loader-inner"></span></span>
+    </div>
+<script>
+        $(window).on("load",function(){
+          $(".loader-wrapper").fadeOut("slow");
+        });
+    </script>
+   </body>
+</html>

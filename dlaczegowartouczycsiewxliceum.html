@@ -1,0 +1,565 @@
+<html>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+<head>
+<title>X Liceum Ogólnokształcące w Krakowie im. KEN</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Yantramanav:wght@700;900&display=swap,News+Cycle:wght@700&display=swap"
+rel="stylesheet">
+<style>
+html, body {
+  height: 100%;
+  margin: 0;
+  overflow-x: hidden;
+  overflow-y: visible;
+  background-image: url('https://scontent.fktw5-1.fna.fbcdn.net/v/t1.15752-9/133832333_422391252215182_5439948955064273770_n.png?_nc_cat=105&cb=846ca55b-ee17756f&ccb=2&_nc_sid=ae9488&_nc_ohc=TVfEOICzBd4AX9MSPvG&_nc_ht=scontent.fktw5-1.fna&oh=35de813962b3833d433703268c8a0183&oe=6010517A');
+  background-repeat: no-repeat;
+  background-attachment: fixed;  
+  background-size: cover;
+}
+.loader-wrapper {
+  width: 10000px;
+  height: 10000px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: White;
+  display:flex;
+}
+#left{
+     flex: 1; 
+     left:0;
+     width:300px;
+     background: linear-gradient(DodgerBlue, DeepSkyBlue);  
+     height:100vh;
+     position:fixed;
+     top:0;
+}
+@media screen and (max-width:530px) and (max-height: 768px) {
+  #left {
+     width:25vw;
+  }
+}
+#center {
+     margin-top:12px;
+     margin-left:310px;
+     margin-right: -8px;
+     flex: 3;
+}
+@media screen and (max-width:530px) and (max-height: 768px) {
+  #center {
+     margin-left:25vw;
+  }
+}
+span b {
+     font-family: "Yantramanav", sans-serif;
+     color: white;
+     font-size: 5.3vw;
+     font-size: 10.6vh;
+}
+span  {
+     font-family: "Yantramanav", sans-serif;
+     color: white;
+     font-size: 5.2vh;
+}
+.podspan {
+     font-family: "Yantramanav", sans-serif;
+     color: white;
+     font-size: 2vh;
+}
+.tytulnews {
+     font-family: "News Cycle", sans-serif;
+     color: #757471;
+     font-size: 1vw;
+     text-transform:uppercase;
+     letter-spacing: 2px;
+}
+@media screen and (max-width:768px) and (max-height: 1920px) {
+  .tytulnews {
+     font-size: 3vw;
+  }
+}
+.podnews {
+     font-family: "News Cycle", sans-serif;
+     color: Grey;
+     font-size: 1vw;
+     text-align: justify;
+}
+@media screen and (max-width:768px) and (max-height: 1920px) {
+  .tytulnews, .podnews {
+     font-size: 3vw;
+  }
+}
+div.kolumna a:link, .kolumna a:visited, .kolumna a:hover, .kolumna a:active, .kolumna2normalnie a:link, .kolumna2normalnie a:visited, .kolumna2normalnie a:hover, .kolumna2normalnie a:active, kolumna2tel a:link, .kolumna2tel a:visited, .kolumna2tel a:hover, .kolumna2tel a:active {
+  color: Grey;
+  background-color: transparent;
+  text-decoration: underline;
+}
+div.kolumna2tel a:link {
+  color: Grey;
+  background-color: transparent;
+  text-decoration: underline;
+}
+div.kolumna2tel a:visited {
+  color: Grey;
+  background-color: transparent;
+  text-decoration: underline;
+}
+div.kolumna2tel a:hover {
+  color: Grey;
+  background-color: transparent;
+  text-decoration: underline;
+}
+div.kolumna2tel a:active {
+  color: Grey;
+  background-color: transparent;
+  text-decoration: underline;
+}
+.kolumna {
+  float: left;
+  width: 95%;
+  padding: 5px;
+}
+.kolumna2normalnie {
+  float: left;
+  width: 95%;
+  padding: 5px;
+  display: block;
+  margin-left: auto;
+  font-size: 0.8vw;
+}
+.kolumna2tel {
+  float: left;
+  width: 95%;
+  padding: 5px;
+  display: none;
+}
+@media screen and (max-width:1024px) and (max-height: 768px) {
+        .kolumna2normalnie {
+        display: none;
+}
+}
+@media screen and (max-width:1024px) and (max-height: 768px) {
+        .kolumna2tel {
+        display: block;
+}
+}
+.rzad::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+@media screen and (max-width:1024px) and (max-height: 768px) {
+  .kolumna {
+    width: 95%;
+  }
+}
+div.wczesniejsze a:link {
+  color: Grey;
+  background-color: transparent;
+  text-decoration: underline;
+}
+div.wczesniejsze a:visited {
+  color: Grey;
+  background-color: transparent;
+  text-decoration: underline;
+}
+div.wczesniejsze a:hover {
+  color: Grey;
+  background-color: transparent;
+  text-decoration: underline;
+}
+div.wczesniejsze a:active {
+  color: Grey;
+  background-color: transparent;
+  text-decoration: underline;
+}
+.wczesniejsze {
+     font-family: "News Cycle", sans-serif;
+     color: Grey;
+     font-size: 1vw;
+     font-weight: bold;
+     letter-spacing: 2px;
+     text-transform:uppercase;
+}
+.naglowek {
+     font-family: "Helvetica";
+     color: SlateGrey;
+     font-size: 1.3vw;
+     letter-spacing: 2px;
+}
+@media screen and (max-width:530px) and (max-height: 768px) {
+  .naglowek {
+     font-size: 3vw;
+     margin-left: 2vw;
+  }
+}
+.myButton {
+	box-shadow: 0px 6px 13px -4px DarkGrey;
+	background:linear-gradient(to bottom, #ffffff 5%, #f6f6f6 100%);
+	background-color:#ffffff;
+	border-radius:42px;
+	display:inline-block;
+	cursor:pointer;
+	color:DodgerBlue;
+	font-family:Arial;
+	font-size:2vh;
+	font-weight:bold;
+        padding:2vh 8vh;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #ffffff;
+	transition: color 0.3s, padding 0.3s;
+}
+.stronaglownanormalnie{
+	display: block;
+}
+.stronaglownatel {
+        display: none;
+}
+@media screen and (max-width:1023px) and (max-height: 767px) {
+        .stronaglownanormalnie {
+        display: none;
+}
+}
+@media screen and (max-width:1023px) and (max-height: 767px) {
+        .stronaglownatel {
+        display: block;
+}
+}
+.COVID-19normalnie{
+	display: block;
+}
+.COVID-19tel {
+        display: none;
+}
+@media screen and (max-width:1023px) and (max-height: 767px) {
+        .COVID-19normalnie {
+        display: none;
+}
+}
+@media screen and (max-width:1023px) and (max-height: 767px) {
+        .COVID-19tel {
+        display: block;
+}
+}
+.Oszkolenormalnie{
+	display: block;
+}
+.Oszkoletel {
+        display: none;
+}
+@media screen and (max-width:1023px) and (max-height: 767px) {
+        .Oszkolenormalnie {
+        display: none;
+}
+}
+@media screen and (max-width:1023px) and (max-height: 767px) {
+        .Oszkoletel {
+        display: block;
+}
+}
+.Rekrutacjanormalnie{
+	display: block;
+}
+.Rekrutacjatel {
+        display: none;
+}
+@media screen and (max-width:1023px) and (max-height: 767px) {
+        .Rekrutacjanormalnie {
+        display: none;
+}
+}
+@media screen and (max-width:1023px) and (max-height: 767px) {
+        .Rekrutacjatel {
+        display: block;
+}
+}
+.Moodlenormalnie{
+	display: block;
+}
+.Moodletel {
+        display: none;
+}
+@media screen and (max-width:1023px) and (max-height: 767px) {
+        .Moodlenormalnie {
+        display: none;
+}
+}
+@media screen and (max-width:1023px) and (max-height: 767px) {
+        .Moodletel {
+        display: block;
+}
+}
+.Kontaktnormalnie{
+	display: block;
+}
+.Kontakttel {
+        display: none;
+}
+@media screen and (max-width:1023px) and (max-height: 767px) {
+        .Kontaktnormalnie {
+        display: none;
+}
+}
+@media screen and (max-width:1023px) and (max-height: 767px) {
+        .Kontakttel {
+        display: block;
+}
+}
+.myButton:hover {
+        color: LightGreen;
+	position:relative;
+	padding:2vh 9.6vh;
+	position:relative;
+}
+.myButton:active {
+	position:relative;
+	top:1px;
+}
+.myButton2 {
+	box-shadow: 0px 6px 13px -4px DarkGrey;
+	background:linear-gradient(to bottom, #ffffff 5%, #f6f6f6 100%);
+	background-color:#ffffff;
+	border-radius:42px;
+	display:inline-block;
+	cursor:pointer;
+	color:DodgerBlue;
+	font-family:Arial;
+	font-size:2vh;
+	font-weight:bold;
+	padding:2vh 10.26vh;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #ffffff;
+	transition: color 0.3s, padding 0.3s;
+}
+.myButton2:hover {
+        color: LightGreen;
+	position:relative;
+	padding:2vh 11.86vh;
+	position:relative;
+}
+.myButton2:active {
+	position:relative;
+	top:1px;
+}
+.myButton3 {
+	box-shadow: 0px 6px 13px -4px DarkGrey;
+	background:linear-gradient(to bottom, #ffffff 5%, #f6f6f6 100%);
+	background-color:#ffffff;
+	border-radius:42px;
+	display:inline-block;
+	cursor:pointer;
+	color:DodgerBlue;
+	font-family:Arial;
+	font-size:2vh;
+	font-weight:bold;
+	padding:2vh 10.66vh;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #ffffff;
+	transition: color 0.3s, padding 0.3s;
+}
+.myButton3:hover {
+        color: LightGreen;
+	position:relative;
+	padding:2vh 12.26vh;
+	position:relative;
+}
+.myButton3:active {
+	position:relative;
+	top:1px;
+}
+.myButton4 {
+	box-shadow: 0px 6px 13px -4px DarkGrey;
+	background:linear-gradient(to bottom, #ffffff 5%, #f6f6f6 100%);
+	background-color:#ffffff;
+	border-radius:42px;
+	display:inline-block;
+	cursor:pointer;
+	color:DodgerBlue;
+	font-family:Arial;
+	font-size:2vh;
+	font-weight:bold;
+	padding:2vh 9.6vh;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #ffffff;
+	transition: color 0.3s, padding 0.3s;
+}
+.myButton4:hover {
+        color: LightGreen;
+	position:relative;
+	padding:2vh 11.2vh;
+	position:relative;
+}
+.myButton4:active {
+	position:relative;
+	top:1px;
+}
+.myButton5 {
+	box-shadow: 0px 6px 13px -4px DarkGrey;
+	background:linear-gradient(to bottom, #ffffff 5%, #f6f6f6 100%);
+	background-color:#ffffff;
+	border-radius:42px;
+	display:inline-block;
+	cursor:pointer;
+	color:DodgerBlue;
+	font-family:Arial;
+	font-size:2vh;
+	font-weight:bold;
+	padding:2vh 10.93vh;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #ffffff;
+	transition: color 0.3s, padding 0.3s;
+}
+.myButton5:hover {
+        color: LightGreen;
+	position:relative;
+	padding:2vh 12.53vh;
+	position:relative;
+}
+.myButton5:active {
+	position:relative;
+	top:1px;
+}
+.myButton6 {
+	box-shadow: 0px 6px 13px -4px DarkGrey;
+	background:linear-gradient(to bottom, #ffffff 5%, #f6f6f6 100%);
+	background-color:#ffffff;
+	border-radius:42px;
+	display:inline-block;
+	cursor:pointer;
+	color:DodgerBlue;
+	font-family:Arial;
+	font-size:2vh;
+	font-weight:bold;
+	padding:2vh 10.93vh;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #ffffff;
+	transition: color 0.3s, padding 0.3s;
+}
+.myButton6:hover {
+        color: LightGreen;
+	position:relative;
+	padding:2vh 12.53vh;
+	position:relative;
+}
+.myButton6:active {
+	position:relative;
+	top:1px;
+}
+#datetime {
+     font-family: "Yantramanav", sans-serif;
+     color: white;
+     font-size: 2vh;
+}
+</style>
+</head>
+<body>
+<div id="left"><center><br><br><span><b>X</b>LO</span><div class="podspan">im. Komisji Edukacji Narodowej w Krakowie</div>
+<div class="Stronaglownanormalnie"><br style="line-height: 5vh"><a href="Stronaglowna.html" class="myButton">Strona główna</a></div>
+<div class="Stronaglownatel"><br style="line-height: 5vh"><a href="Stronaglowna.html"><img src="dom.svg" width="40vw"></a></div>
+<div class="COVID-19normalnie"><p><a href="COVID-19.html" class="myButton2">COVID-19</a></p></div>
+<div class="COVID-19tel"><p><a href="COVID-19.html"><img src="koronawirus.svg" width="40vw"></a></p></div>
+<div class="Oszkolenormalnie"><p><a href="Oszkole.html" class="myButton3">O szkole</a></p></div>
+<div class="Oszkoletel"><p><a href="Oszkole.html"><img src="szkola.svg" width="40vw"></a></p></div>
+<div class="Rekrutacjanormalnie"><p><a href="Rekrutacja.html" class="myButton4">Rekrutacja</a></p></div>
+<div class="Rekrutacjatel"><p><a href="Rekrutacja.html"><img src="dlugopis.svg" width="40vw"></a></p></div>
+<div class="Moodlenormalnie"><p><a href="https://www.x-lo.krakow.pl/moodle/index.php" class="myButton5">Moodle</a></p></div>
+<div class="Moodletel"><p><a href="https://www.x-lo.krakow.pl/moodle/index.php"><img src="moodle.svg" width="40vw"></a></p></div>
+<div class="Kontaktnormalnie"><p><a href="Kontakt.html" class="myButton6">Kontakt</a></p></div>
+<div class="Kontakttel"><p><a href="Kontakt.html"><img src="chmura.svg" width="40vw"></a></p></div>
+</center></div>
+<div id="center"><div class="naglowek">Dlaczego warto uczyć się w X Liceum?</div>
+<br>
+<div class="rzad">
+<div class="kolumna">
+<b><div class="tytulnews"></div></b>
+   <div class="podnews">X LO cieszy się popularnością ze względu na wysoki poziom nauczania i przyjazną atmosferę. W  naszej szkole pracuje zespół doświadczonych nauczycieli, poszukujących inspiracji dydaktycznych i rozwijających swoje kompetencje.
+<p>
+<li>Dbamy o komfort pracy uczniów i dostępność przydatnych w nauce technologii informatycznych.
+<li>Uczestniczymy – młodzież, nauczyciele i rodzice - w licznych projektach interdyscyplinarnych i programach edukacyjnych.
+<li>Zapewniamy poczucie bezpieczeństwa - nasza szkoła posiada Certyfikat „Szkoła Promująca Bezpieczeństwo”.
+<li>Otwieramy przed młodymi najbliższe środowisko, ale także Europę – dzięki współpracy z zagranicznymi szkołami, wymianom międzynarodowym, obozom naukowym poza granicami kraju.
+<li>Przygotowujemy do matury, ale także do dokonywania świadomego wyboru własnej drogi życiowej – uczniowie mogą liczyć na profesjonalne konsultacje z doradcami zawodowymi.
+<li>Abiturienci przystępujący do egzaminu maturalnego uzyskują wysokie wyniki, znacznie przekraczające średnie wyniki w Małopolsce.
+</p>
+<p>
+ZOBACZ:<br>
+<a href="http://www.x-lo.krakow.pl/inspiracje.pdf">Twórcze inspiracje Dziesiątki</a><br>
+<a href="http://www.x-lo.krakow.pl/podroze.pdf">Nasze podróże</a><br>
+<a href="http://www.x-lo.krakow.pl/wymiany.pdf">Wymiany zagraniczne</a><br>
+</p>
+</div>
+</div>
+<div class="kolumna">
+<b><div class="tytulnews">ZAPLECZE DYDAKTYCZNE</div></b>
+   <div class="podnews">Liceum posiada 20 dużych sal lekcyjnych, bogato wyposażone pracownie naukowe (biologiczną, geograficzną, chemiczną, matematyczną, fizyczną) uzupełnione o tablice interaktywne oraz stanowiska komputerowe, pełnowymiarową salę gimnastyczną z widownią, siłownię, aulę ze sceną. Nowoczesna biblioteka z multimedialnym centrum informacji oraz elektronicznym spisem księgozbioru jest obsługiwana przez program informatyczny MOL. W każdej sali lekcyjnej znajduje się rzutnik multimedialny i komputer. Nauczyciele i uczniowie mają do dyspozycji pomoce naukowe, w tym sprzęt audiowizualny, video mikroskop, teleskop. Nowoczesny sprzęt dydaktyczny wdraża uczniów do mobilnego korzystania z platformy edukacyjnej.
+<p>
+Uczniowie mogą korzystać z bufetu prowadzonego przez ajenta oraz punktu ksero.
+</p>
+</div>
+</div>
+<div class="kolumna">
+<b><div class="tytulnews">KADRA NAUCZYCIELSKA</div></b>
+   <div class="podnews">90% nauczycieli przedmiotów maturalnych jest egzaminatorami OKE, 90% nauczycieli posiada stopień nauczyciela dyplomowanego, 4 nauczycieli jest ekspertami ds. awansu zawodowego.
+<p>
+</p>
+</div>
+</div>
+<div class="kolumna">
+<b><div class="tytulnews">WSPÓŁPRACA Z UCZELNIAMI WYŻSZYMI</div></b>
+   <div class="podnews"><li><b>Politechnika Krakowska</b> - patronat nad klasami z rozszerzonym programem nauczania przedmiotów ścisłych-zajęcia odbywają się w Instytucie Fizyki i w Instytucie Matematyki
+<li><b>Uniwersytet Jagielloński</b> - klasy z rozszerzonym programem humanistycznym są objęte patronatem i współpracują z Instytutem Etnologii i Antropologii Kulturowej
+<li><b>Uniwersytet Jagielloński</b> - udział uczniów z klas o rozszerzonym programie z biologii-chemii w zajęciach laboratoryjnych i terenowych organizowanych przez Instytut Zoologii i Badań Biomedycznych oraz Instytut Botaniki; współpraca w ramach Małopolskiej Chmury Edukacyjnej
+<li><b>Uniwersytet Rolniczy</b> - realizacja projektów badawczych w ramach współpracy z Wydziałem Biotechnologii i Ogrodnictwa
+<li><b>Uniwersytet Ekonomiczny</b> - patronat naukowy i udział uczniów w projektach prowadzonych lub koordynowanych przez pracowników tej uczelni
+<li><b>Uniwersytet Papieski Jana Pawła II w Krakowie</b> - udział uczniów w warsztatach historycznych-sesje edukacyjne kończy test wiedzy, którego laureaci otrzymują indeksy Wydziału Historii i Dziedzictwa Kulturowego UPJPII
+<p>
+</p>
+</div>
+</div>
+<div class="kolumna">
+<b><div class="tytulnews">WYCHOWANIE I OPIEKA</div></b>
+   <div class="podnews">Szkoła kształtuje postawy wzajemnego szacunku, tolerancji, współpracy i współdziałania w realizacji celów całej społeczności szkolnej. Program Wychowawczo-Profilaktyczny Szkoły współtworzony jest przez młodzież, rodziców i nauczycieli. Zapewniamy profesjonalną  opiekę pedagoga i psychologa. Uczniowie klas pierwszych objęci są zajęciami integracyjnymi (także w formie wycieczek) oraz warsztatami efektywnego uczenia się. Młodzież znajdująca się w trudnej sytuacji materialnej może korzystać z refundacji kosztów wyżywienia. Działający w szkole Samorząd Uczniowski podejmuje różnorodne akcje wynikające z planu własnych działań oraz programu wychowawczego szkoły, m. in. organizuje zbiórki charytatywne i konkursy. Członkowie Samorządu reprezentują szkołę w strukturach samorządowych dzielnicy i miasta.
+<p>
+</p>
+</div>
+</div>
+<div class="kolumna">
+<b><div class="tytulnews">KONTAKTY ZAGRANICZNE</div></b>
+   <div class="podnews">X LO szczyci się wieloletnią tradycją w zakresie kontaktów zagranicznych, które sprzyjają podwyższaniu poziomu znajomości języków obcych oraz poznawaniu kultur innych krajów. Prowadzimy wymiany z partnerskimi szkołami z Niemiec i Włoch w ramach interdyscyplinarnych programów współpracy międzynarodowej. Od kilku lat uczniowie naszej szkoły uczestniczą również w Forum Młodzieży Europejskiej, podczas  którego  mają możliwość doskonalenia swoich umiejętności językowych (projekty w ramach warsztatów fotograficznych, muzycznych, prasowych, tanecznych, teatralnych czy turystycznych).
+<p>
+</p>
+</div>
+</div>
+<div class="kolumna">
+<b><div class="tytulnews">SZCZEGÓLNE OSIĄGNIĘCIA I SUKCESY</div></b>
+   <div class="podnews">Szkoła cieszy się popularnością ze względu na wysoki poziom nauczania, potwierdzony wynikami zewnętrznego egzaminu maturalnego. Nasi uczniowie zostali stypendystami Stypendium Prezesa Rady Ministrów oraz Stypendium Ministra Edukacji Narodowej. Szczycimy się również gronem laureatów Samorządowego Konkursu Nastolatków "8 Wspaniałych". Uczniowie X LO są finalistami olimpiad przedmiotowych, międzyszkolnych zawodów matematycznych, laureatami konkursów poetyckich, recytatorskich, fotograficznych, odnoszą sukcesy w zawodach i rozgrywkach sportowych oraz w zawodach sanitarnych.
+<p>
+</p>
+</div>
+</div>
+<div class="kolumna">
+<b><div class="tytulnews">ZAJĘCIA POZALEKCYJNE</div></b>
+   <div class="podnews">Szkoła rozwija zainteresowania uczniów w ramach oferty zajęć pozalekcyjnych. Proponujemy m. in.  Akademię Filmową, teatr, chór, dodatkowe zajęcia przedmiotowe, olimpijskie oraz spotkania przygotowujące do egzaminu maturalnego. Dbamy również o uczniów mających trudności w nauce poprzez organizowanie konsultacji z poszczególnych przedmiotów. Licealiści mają możliwość uczestniczenia w zajęciach rekreacyjno-sportowych z takich dyscyplin jak: koszykówka, piłka halowa, siatkowa, piłka nożna, aerobik, pływanie.
+<p>
+Organizujemy również liczne konkursy oraz wyjścia do teatrów, kin, muzeów, wyjazdy na obozy i wycieczki naukowe. Ponadto zachęcamy młodzież do aktywnego wspierania organizacji pożytku publicznego oraz pomocy potrzebującym poprzez udział w licznych akcjach charytatywnych oraz współpracę z takimi instytucjami jak domy dziecka, Hospicjum św. Łazarza, Dom Pomocy Społecznej  im. L.i A. Helclów czy Towarzystwo Opieki nad Zwierzętami.
+</p>
+</div>
+</div>
+<div class="kolumna">
+<b><div class="tytulnews">DOJAZD DO SZKOŁY</div></b>
+   <div class="podnews">Istotną zaletą X LO jest doskonała lokalizacja, zapewniająca dogodny dojazd z najdalszych nawet krańców miasta i okolic Krakowa. W pobliżu ulicy Wróblewskiego znajdują się między innymi przystanki tramwajowe: Dworzec Główny, Stary Kleparz i Nowy Kleparz. Poza tym odległość między szkołą a Dworcem Głównym można pokonać pieszo w ciągu kilku minut, zatem dojazd do liceum pociągiem nie stanowi problemu.
+</div>
+</div>
+</div>
+<div class="loader-wrapper">
+      <span class="loader"><span class="loader-inner"></span></span>
+    </div>
+<script>
+        $(window).on("load",function(){
+          $(".loader-wrapper").fadeOut("slow");
+        });
+    </script>
+   </body>
+</html>
