@@ -227,6 +227,22 @@ div.wczesniejsze a:active {
 	text-shadow:0px 1px 0px #ffffff;
 	transition: color 0.3s, padding 0.3s;
 }
+.XLOnormalnie{
+	display: block;
+}
+.XLOtel {
+        display: none;
+}
+@media screen and (max-width:625px) and (max-height: 375px) {
+        .XLOnormalnie {
+        display: none;
+}
+}
+@media screen and (max-width:625px) and (max-height: 375px) {
+        .XLOtel {
+        display: block;
+}
+}
 .stronaglownanormalnie{
 	display: block;
 }
@@ -472,6 +488,8 @@ div.wczesniejsze a:active {
 </head>
 <body>
 <div id="left"><center><br><br><span><b>X</b>LO</span><div class="podspan">im. Komisji Edukacji Narodowej w Krakowie</div>
+<div class="XLOnormalnie"><div id="left"><center><br><br><span><b>X</b>LO</span><div class="podspan">im. Komisji Edukacji Narodowej w Krakowie</div></div>
+<div class="XLOtel"><div id="left"><center><span><b>X</b>LO</span><div class="podspan">im. Komisji Edukacji Narodowej w Krakowie</div></div>
 <div class="Stronaglownanormalnie"><br style="line-height: 5vh"><a href="Stronaglowna.html" class="myButton">Strona główna</a></div>
 <div class="Stronaglownatel"><br style="line-height: 5vh"><a href="Stronaglowna.html"><img src="dom.svg" width="40vw"></a></div>
 <div class="COVID-19normalnie"><p><a href="COVID-19.html" class="myButton2">COVID-19</a></p></div>
