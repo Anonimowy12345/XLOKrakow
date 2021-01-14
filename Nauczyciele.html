@@ -1,0 +1,784 @@
+<html lang="pl">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+<head>
+<title>X Liceum Ogólnokształcące w Krakowie im. KEN</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Yantramanav:wght@700;900&display=swap,News+Cycle:wght@700&display=swap"
+rel="stylesheet">
+<style>
+html, body {
+  height: 100%;
+  margin: 0;
+  overflow-x: hidden;
+  overflow-y: visible;
+  background-image: url('https://scontent.fktw5-1.fna.fbcdn.net/v/t1.15752-9/133832333_422391252215182_5439948955064273770_n.png?_nc_cat=105&cb=846ca55b-ee17756f&ccb=2&_nc_sid=ae9488&_nc_ohc=TVfEOICzBd4AX9MSPvG&_nc_ht=scontent.fktw5-1.fna&oh=35de813962b3833d433703268c8a0183&oe=6010517A');
+  background-repeat: no-repeat;
+  background-attachment: fixed;  
+  background-size: cover;
+}
+.loader-wrapper {
+  width: 10000px;
+  height: 10000px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: White;
+  display:flex;
+}
+#left, #lefttel{
+     flex: 1; 
+     left:0;
+     width:300px;
+     background: linear-gradient(DodgerBlue, DeepSkyBlue);  
+     height:100vh;
+     position:fixed;
+     top:0;
+}
+#left {
+	display: block;
+}
+#lefttel {
+	display: none;
+}
+@media screen and (max-width:625px) and (max-height: 375px) {
+  #left {
+     display: none;
+  }
+}	
+@media screen and (max-width:625px) and (max-height: 375px) {
+  #lefttel {
+     display: block;
+  }
+}
+@media screen and (max-width:530px) and (max-height: 768px) {
+  #left, #lefttel {
+     width:25vw;
+  }
+}
+@media screen and (max-width:625px) and (max-height: 375px) {
+  #left, #lefttel {
+     width:25vw;
+  }
+}
+#center {
+     margin-top:12px;
+     margin-left:310px;
+     margin-right: -8px;
+     flex: 3;
+}
+@media screen and (max-width:530px) and (max-height: 768px) {
+  #center {
+     margin-left:25vw;
+  }
+}
+@media screen and (max-width:625px) and (max-height: 375px) {
+  #center {
+     margin-left:25vw;
+  }
+}
+span b {
+     font-family: "Yantramanav", sans-serif;
+     color: white;
+     font-size: 5.3vw;
+     font-size: 10.6vh;
+}
+span  {
+     font-family: "Yantramanav", sans-serif;
+     color: white;
+     font-size: 5.2vh;
+}
+.podspan {
+     font-family: "Yantramanav", sans-serif;
+     color: white;
+     font-size: 2vh;
+}
+.tytulnews {
+     font-family: "News Cycle", sans-serif;
+     color: #757471;
+     font-size: 1vw;
+     text-transform:uppercase;
+     letter-spacing: 2px;
+}
+@media screen and (max-width:768px) and (max-height: 1920px) {
+  .tytulnews {
+     font-size: 3vw;
+  }
+}
+.podnews {
+     font-family: "News Cycle", sans-serif;
+     color: Grey;
+     font-size: 1vw;
+}
+@media screen and (max-width:768px) and (max-height: 1920px) {
+  .tytulnews, .podnews {
+     font-size: 3vw;
+  }
+}
+div.kolumna a:link, .kolumna a:visited, .kolumna a:hover, .kolumna a:active, .kolumna2normalnie a:link, .kolumna2normalnie a:visited, .kolumna2normalnie a:hover, .kolumna2normalnie a:active, kolumna2tel a:link, .kolumna2tel a:visited, .kolumna2tel a:hover, .kolumna2tel a:active {
+  color: Grey;
+  background-color: transparent;
+  text-decoration: underline;
+}
+div.kolumna2tel a:link {
+  color: Grey;
+  background-color: transparent;
+  text-decoration: underline;
+}
+div.kolumna2tel a:visited {
+  color: Grey;
+  background-color: transparent;
+  text-decoration: underline;
+}
+div.kolumna2tel a:hover {
+  color: Grey;
+  background-color: transparent;
+  text-decoration: underline;
+}
+div.kolumna2tel a:active {
+  color: Grey;
+  background-color: transparent;
+  text-decoration: underline;
+}
+.kolumna {
+  float: left;
+  width: 97.5%;
+  padding: 5px;
+}
+.kolumna2normalnie {
+  float: left;
+  width: 95%;
+  padding: 5px;
+  display: block;
+  margin-left: auto;
+  font-size: 0.8vw;
+}
+.kolumna2tel {
+  float: left;
+  width: 95%;
+  padding: 5px;
+  display: none;
+}
+@media screen and (max-width:1024px) and (max-height: 768px) {
+        .kolumna2normalnie {
+        display: none;
+}
+}
+@media screen and (max-width:1024px) and (max-height: 768px) {
+        .kolumna2tel {
+        display: block;
+}
+}
+.rzad::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+@media screen and (max-width:1024px) and (max-height: 768px) {
+  .kolumna {
+    width: 95%;
+  }
+}
+div.wczesniejsze a:link {
+  color: Grey;
+  background-color: transparent;
+  text-decoration: underline;
+}
+div.wczesniejsze a:visited {
+  color: Grey;
+  background-color: transparent;
+  text-decoration: underline;
+}
+div.wczesniejsze a:hover {
+  color: Grey;
+  background-color: transparent;
+  text-decoration: underline;
+}
+div.wczesniejsze a:active {
+  color: Grey;
+  background-color: transparent;
+  text-decoration: underline;
+}
+.wczesniejsze {
+     font-family: "News Cycle", sans-serif;
+     color: Grey;
+     font-size: 1vw;
+     font-weight: bold;
+     letter-spacing: 2px;
+     text-transform:uppercase;
+}
+.naglowek {
+     font-family: "Helvetica";
+     color: SlateGrey;
+     font-size: 1.3vw;
+     letter-spacing: 2px;
+}
+@media screen and (max-width:530px) and (max-height: 768px) {
+  .naglowek {
+     font-size: 3vw;
+     margin-left: 2vw;
+  }
+}
+@media screen and (max-width:625px) and (max-height: 375px) {
+    .naglowek {
+     font-size: 3vw;
+     margin-left: 2vw;
+  }
+}
+.myButton {
+	box-shadow: 0px 6px 13px -4px DarkGrey;
+	background:linear-gradient(to bottom, #ffffff 5%, #f6f6f6 100%);
+	background-color:#ffffff;
+	border-radius:42px;
+	display:inline-block;
+	cursor:pointer;
+	color:DodgerBlue;
+	font-family:Arial;
+	font-size:2vh;
+	font-weight:bold;
+        padding:2vh 8vh;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #ffffff;
+	transition: color 0.3s, padding 0.3s;
+}
+.stronaglownanormalnie{
+	display: block;
+}
+.stronaglownatel {
+        display: none;
+}
+@media screen and (max-width:1023px) and (max-height: 767px) {
+        .stronaglownanormalnie {
+        display: none;
+}
+}
+@media screen and (max-width:1023px) and (max-height: 767px) {
+        .stronaglownatel {
+        display: block;
+}
+}
+.COVID-19normalnie{
+	display: block;
+}
+.COVID-19tel {
+        display: none;
+}
+@media screen and (max-width:1023px) and (max-height: 767px) {
+        .COVID-19normalnie {
+        display: none;
+}
+}
+@media screen and (max-width:1023px) and (max-height: 767px) {
+        .COVID-19tel {
+        display: block;
+}
+}
+.Oszkolenormalnie{
+	display: block;
+}
+.Oszkoletel {
+        display: none;
+}
+@media screen and (max-width:1023px) and (max-height: 767px) {
+        .Oszkolenormalnie {
+        display: none;
+}
+}
+@media screen and (max-width:1023px) and (max-height: 767px) {
+        .Oszkoletel {
+        display: block;
+}
+}
+.Rekrutacjanormalnie{
+	display: block;
+}
+.Rekrutacjatel {
+        display: none;
+}
+@media screen and (max-width:1023px) and (max-height: 767px) {
+        .Rekrutacjanormalnie {
+        display: none;
+}
+}
+@media screen and (max-width:1023px) and (max-height: 767px) {
+        .Rekrutacjatel {
+        display: block;
+}
+}
+.Moodlenormalnie{
+	display: block;
+}
+.Moodletel {
+        display: none;
+}
+@media screen and (max-width:1023px) and (max-height: 767px) {
+        .Moodlenormalnie {
+        display: none;
+}
+}
+@media screen and (max-width:1023px) and (max-height: 767px) {
+        .Moodletel {
+        display: block;
+}
+}
+.Kontaktnormalnie{
+	display: block;
+}
+.Kontakttel {
+        display: none;
+}
+@media screen and (max-width:1023px) and (max-height: 767px) {
+        .Kontaktnormalnie {
+        display: none;
+}
+}
+@media screen and (max-width:1023px) and (max-height: 767px) {
+        .Kontakttel {
+        display: block;
+}
+}
+.myButton:hover {
+        color: LightGreen;
+	position:relative;
+	padding:2vh 9.6vh;
+	position:relative;
+}
+.myButton:active {
+	position:relative;
+	top:1px;
+}
+.myButton2 {
+	box-shadow: 0px 6px 13px -4px DarkGrey;
+	background:linear-gradient(to bottom, #ffffff 5%, #f6f6f6 100%);
+	background-color:#ffffff;
+	border-radius:42px;
+	display:inline-block;
+	cursor:pointer;
+	color:DodgerBlue;
+	font-family:Arial;
+	font-size:2vh;
+	font-weight:bold;
+	padding:2vh 10.26vh;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #ffffff;
+	transition: color 0.3s, padding 0.3s;
+}
+.myButton2:hover {
+        color: LightGreen;
+	position:relative;
+	padding:2vh 11.86vh;
+	position:relative;
+}
+.myButton2:active {
+	position:relative;
+	top:1px;
+}
+.myButton3 {
+	box-shadow: 0px 6px 13px -4px DarkGrey;
+	background:linear-gradient(to bottom, #ffffff 5%, #f6f6f6 100%);
+	background-color:#ffffff;
+	border-radius:42px;
+	display:inline-block;
+	cursor:pointer;
+	color:DodgerBlue;
+	font-family:Arial;
+	font-size:2vh;
+	font-weight:bold;
+	padding:2vh 10.66vh;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #ffffff;
+	transition: color 0.3s, padding 0.3s;
+}
+.myButton3:hover {
+        color: LightGreen;
+	position:relative;
+	padding:2vh 12.26vh;
+	position:relative;
+}
+.myButton3:active {
+	position:relative;
+	top:1px;
+}
+.myButton4 {
+	box-shadow: 0px 6px 13px -4px DarkGrey;
+	background:linear-gradient(to bottom, #ffffff 5%, #f6f6f6 100%);
+	background-color:#ffffff;
+	border-radius:42px;
+	display:inline-block;
+	cursor:pointer;
+	color:DodgerBlue;
+	font-family:Arial;
+	font-size:2vh;
+	font-weight:bold;
+	padding:2vh 9.6vh;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #ffffff;
+	transition: color 0.3s, padding 0.3s;
+}
+.myButton4:hover {
+        color: LightGreen;
+	position:relative;
+	padding:2vh 11.2vh;
+	position:relative;
+}
+.myButton4:active {
+	position:relative;
+	top:1px;
+}
+.myButton5 {
+	box-shadow: 0px 6px 13px -4px DarkGrey;
+	background:linear-gradient(to bottom, #ffffff 5%, #f6f6f6 100%);
+	background-color:#ffffff;
+	border-radius:42px;
+	display:inline-block;
+	cursor:pointer;
+	color:DodgerBlue;
+	font-family:Arial;
+	font-size:2vh;
+	font-weight:bold;
+	padding:2vh 10.93vh;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #ffffff;
+	transition: color 0.3s, padding 0.3s;
+}
+.myButton5:hover {
+        color: LightGreen;
+	position:relative;
+	padding:2vh 12.53vh;
+	position:relative;
+}
+.myButton5:active {
+	position:relative;
+	top:1px;
+}
+.myButton6 {
+	box-shadow: 0px 6px 13px -4px DarkGrey;
+	background:linear-gradient(to bottom, #ffffff 5%, #f6f6f6 100%);
+	background-color:#ffffff;
+	border-radius:42px;
+	display:inline-block;
+	cursor:pointer;
+	color:DodgerBlue;
+	font-family:Arial;
+	font-size:2vh;
+	font-weight:bold;
+	padding:2vh 10.93vh;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #ffffff;
+	transition: color 0.3s, padding 0.3s;
+}
+.myButton6:hover {
+        color: LightGreen;
+	position:relative;
+	padding:2vh 12.53vh;
+	position:relative;
+}
+.myButton6:active {
+	position:relative;
+	top:1px;
+}
+#datetime {
+     font-family: "Yantramanav", sans-serif;
+     color: white;
+     font-size: 2vh;
+}
+</style>
+</head>
+<body>
+<div id="left"><center><br><br><span><b>X</b>LO</span><div class="podspan">im. Komisji Edukacji Narodowej w Krakowie</div>
+<div class="Stronaglownanormalnie"><br style="line-height: 5vh"><a href="Stronaglowna.html" class="myButton">Strona główna</a></div>
+<div class="Stronaglownatel"><br style="line-height: 5vh"><a href="Stronaglowna.html"><img src="dom.svg" width="40vw" alt="Znak strony głównej"></a></div>
+<div class="COVID-19normalnie"><p><a href="COVID-19.html" class="myButton2">COVID-19</a></p></div>
+<div class="COVID-19tel"><p><a href="COVID-19.html"><img src="koronawirus.svg" width="40vw" alt="Znak COVID-19"></a></p></div>
+<div class="Oszkolenormalnie"><p><a href="Oszkole.html" class="myButton3">O szkole</a></p></div>
+<div class="Oszkoletel"><p><a href="Oszkole.html"><img src="szkola.svg" width="40vw" alt="Znak szkoły"></a></p></div>
+<div class="Rekrutacjanormalnie"><p><a href="Rekrutacja.html" class="myButton4">Rekrutacja</a></p></div>
+<div class="Rekrutacjatel"><p><a href="Rekrutacja.html"><img src="dlugopis.svg" width="40vw" alt="Znak rekrutacji"></a></p></div>
+<div class="Moodlenormalnie"><p><a href="https://www.x-lo.krakow.pl/moodle/index.php" class="myButton5">Moodle</a></p></div>
+<div class="Moodletel"><p><a href="https://www.x-lo.krakow.pl/moodle/index.php"><img src="moodle.svg" width="40vw" alt="Znak Moodle"></a></p></div>
+<div class="Kontaktnormalnie"><p><a href="Kontakt.html" class="myButton6">Kontakt</a></p></div>
+<div class="Kontakttel"><p><a href="Kontakt.html"><img src="chmura.svg" width="40vw" alt="Znak kontaktu"></a></p></div>
+</center></div>
+<div id="lefttel"><center><span style="font-size: 15px"><b style="font-size: 25px">X</b>LO</span>
+<div class="Stronaglownanormalnie"><br style="line-height: 0.3vh"><a href="Stronaglowna.html" class="myButton">Strona główna</a></div>
+<div class="Stronaglownatel"><br style="line-height: 0.3vh"><a href="Stronaglowna.html"><img src="dom.svg" width="40vh" alt="Znak strony głównej"></a></div>
+<div class="COVID-19normalnie"><br style="line-height: 3vh"><a href="COVID-19.html" class="myButton2">COVID-19</a></div>
+<div class="COVID-19tel"><br style="line-height: 0.6vh"><a href="COVID-19.html"><img src="koronawirus.svg" width="40vh" alt="Znak COVID-19"></a></div>
+<div class="Oszkolenormalnie"><br style="line-height: 3vh"><a href="Oszkole.html" class="myButton3">O szkole</a></div>
+<div class="Oszkoletel"><br style="line-height: 0.6vh"><a href="Oszkole.html"><img src="szkola.svg" width="40vh" alt="Znak szkoły"></a></div>
+<div class="Rekrutacjanormalnie"><br style="line-height: 3vh"><a href="Rekrutacja.html" class="myButton4">Rekrutacja</a></div>
+<div class="Rekrutacjatel"><br style="line-height: 0.6vh"><a href="Rekrutacja.html"><img src="dlugopis.svg" width="40vh" alt="Znak rekrutacji"></a></div>
+<div class="Moodlenormalnie"><br style="line-height: 3vh"><a href="https://www.x-lo.krakow.pl/moodle/index.php" class="myButton5">Moodle</a></div>
+<div class="Moodletel"><br style="line-height: 0.6vh"><a href="https://www.x-lo.krakow.pl/moodle/index.php"><img src="moodle.svg" width="40vh" alt="Znak Moodle"></a></div>
+<div class="Kontaktnormalnie"><br style="line-height: 3vh"><a href="Kontakt.html" class="myButton6">Kontakt</a></div>
+<div class="Kontakttel"><br style="line-height: 0.6vh"><a href="Kontakt.html"><img src="chmura.svg" width="40vh" alt="Znak kontaktu"></a></div>
+</center></div>
+<div id="center"><div class="naglowek">Nauczyciele</div>
+<br>
+<div class="rzad">
+<div class="kolumna">
+<b><div class="tytulnews" style="text-align: center">Dyrektor szkoły</div></b>
+   <div class="podnews" style="text-align: center">mgr Tamara Cieśla
+<p>
+</p>
+</div>
+</div>
+<div class="kolumna">
+<b><div class="tytulnews" style="text-align: center">Wicedyrektor ds. dydaktycznych
+</div></b>
+   <div class="podnews" style="text-align: center">mgr Małgorzata Kraszewska
+<p>
+</p>
+</div>
+</div>
+<div class="kolumna">
+<b><div class="tytulnews" style="text-align: center">wicedyrektor ds. wychowawczych
+</div></b>
+   <div class="podnews" style="text-align: center">mgr Agnieszka Mikołajczyk
+<p>
+</p>
+</div>
+</div>
+<div class="kolumna">
+<b><div class="tytulnews" style="text-align: center">Pedagog szkolny
+</div></b>
+   <div class="podnews" style="text-align: center">mgr Magdalena Boczar
+<p>
+</p>
+</div>
+</div>
+<div class="kolumna">
+<b><div class="tytulnews" style="text-align: center">Psycholog szkolny
+</div></b>
+   <div class="podnews" style="text-align: center">mgr Barbara Worgacz
+<p>
+</p>
+</div>
+</div>
+<div class="kolumna">
+<b><div class="tytulnews" style="text-align: center">Szkolny doradca zawodowy
+</div></b>
+   <div class="podnews" style="text-align: center">mgr Dorota Jagocka
+<p>
+</p>
+</div>
+</div>
+<div class="kolumna">
+<b><div class="tytulnews" style="text-align: center">Bibliotekarz
+</div></b>
+   <div class="podnews" style="text-align: center">mgr Krystyna Gdańska
+<p>
+</p>
+</div>
+</div>
+<div class="kolumna">
+<b><div class="tytulnews" style="text-align: center">Bibliotekarz
+</div></b>
+   <div class="podnews" style="text-align: center">mgr Bożena Światłowska
+<p>
+</p>
+</div>
+</div>
+</div>
+<div class="rzad">
+<div class="kolumna">
+<b><div class="tytulnews" style="background-color: DodgerBlue; color: White">Nauczyciele języka polskiego
+</div></b>
+   <div class="podnews">mgr Alina Borowczak–Srokol
+<br>
+mgr Tamara Cieśla
+<br>
+mgr Celina Czopek
+<br>
+mgr Marzena Dąbrowa-Szatko
+<br>
+dr Magdalena Marchaj
+<br>
+mgr Monika Skucińska
+<br>
+mgr Lidia Wierzbicka
+<p>
+</p>
+</div>
+</div>
+<div class="kolumna">
+<b><div class="tytulnews" style="background-color: DodgerBlue; color: White">Nauczyciele filozofii
+</div></b>
+   <div class="podnews">mgr Renata Skorczyńska-Szostak
+<p>
+</p>
+</div>
+</div>
+<div class="kolumna">
+<b><div class="tytulnews" style="background-color: DodgerBlue; color: White">Nauczyciele języka angielskiego
+</div></b>
+   <div class="podnews">mgr Magdalena Bukowiec
+<br>
+mgr Małgorzata Dudek<br>
+mgr Małgorzata Gostyńska<br>
+mgr Krzysztof Gucwa<br>
+mgr Dominika Klimas<br>
+mgr Anna Potępa<br>
+mgr Dorota Pruta<br>
+mgr Beata Skałka<br>
+mgr Małgorzata Smus<br>
+mgr Magdalena Zając<br>
+mgr Magdalena Żywczak
+<p>
+</p>
+</div>
+</div>
+<div class="kolumna">
+<b><div class="tytulnews" style="background-color: DodgerBlue; color: White">Nauczyciele języka niemieckiego
+</div></b>
+   <div class="podnews">mgr Kinga Bury<br>
+mgr Małgorzata Sauer-Kołodziejczyk<br>
+mgr Irena Wiślińska
+<p>
+</p>
+</div>
+</div>
+<div class="kolumna">
+<b><div class="tytulnews" style="background-color: DodgerBlue; color: White">Nauczyciele języka francuskiego
+</div></b>
+   <div class="podnews">mgr Monika Radwańska-Sobieraj<br>
+mgr Bernadetta Sendra
+<p>
+</p>
+</div>
+</div>
+<div class="kolumna">
+<b><div class="tytulnews" style="background-color: DodgerBlue; color: White">Nauczyciele języka rosyjskiego
+</div></b>
+   <div class="podnews">mgr Małgorzata Szóstakowska-Kwarciak
+<p>
+</p>
+</div>
+</div>
+<div class="kolumna">
+<b><div class="tytulnews" style="background-color: DodgerBlue; color: White">Nauczyciele języka hiszpańskiego
+</div></b>
+   <div class="podnews">mgr Małgorzata Dorosz<br>
+mgr Anika Martyniak<br>
+mgr Diana Zakrzewska
+<p>
+</p>
+</div>
+</div>
+<div class="kolumna">
+<b><div class="tytulnews" style="background-color: DodgerBlue; color: White">Nauczyciele historii i wiedzy o społeczeństwie
+</div></b>
+   <div class="podnews">mgr Karolina Jedynak<br>
+mgr Paulina Klemczak<br>
+mgr Grzegorz Marczewski<br>
+mgr Sylwia Todys<br>
+mgr Andrzej Witkowicz
+<p>
+</p>
+</div>
+</div>
+<div class="kolumna">
+<b><div class="tytulnews" style="background-color: DodgerBlue; color: White">Nauczyciele biologii
+</div></b>
+   <div class="podnews">mgr Dorota Jagocka<br>
+mgr Iwona Kuczek<br>
+mgr Katarzyna Kuszneruk-Pajorska
+<p>
+</p>
+</div>
+</div>
+<div class="kolumna">
+<b><div class="tytulnews" style="background-color: DodgerBlue; color: White">Nauczyciele geografii i przedsiębiorczości
+</div></b>
+   <div class="podnews">mgr Aneta Depczyńska<br>
+mgr Joanna Kozub
+<p>
+</p>
+</div>
+</div>
+<div class="kolumna">
+<b><div class="tytulnews" style="background-color: DodgerBlue; color: White">Nauczyciele chemii
+</div></b>
+   <div class="podnews">mgr Grażyna Kaźmirowicz<br>
+mgr Irena Lenart<br>
+mgr Katarzyna Tynor
+<p>
+</p>
+</div>
+</div>
+<div class="kolumna">
+<b><div class="tytulnews" style="background-color: DodgerBlue; color: White">Nauczyciele fizyki
+</div></b>
+   <div class="podnews">mgr Małgorzata Kaźmierczak<br>
+mgr Andrzej Pękala
+<p>
+</p>
+</div>
+</div>
+<div class="kolumna">
+<b><div class="tytulnews" style="background-color: DodgerBlue; color: White">Nauczyciele matematyki
+</div></b>
+   <div class="podnews">mgr Daniel Danieluk<br>
+mgr Małgorzata Kraszewska<br>
+mgr Elżbieta Kwaca<br>
+mgr Agnieszka Lech<br>
+mgr Katarzyna Majewska<br>
+mgr Tadeusz Matusz<br>
+mgr Anna Sypniowska
+<p>
+</p>
+</div>
+</div>
+<div class="kolumna">
+<b><div class="tytulnews" style="background-color: DodgerBlue; color: White">Nauczyciele informatyki
+</div></b>
+   <div class="podnews">mgr Iwona Chyży<br>
+mgr Krzysztof Kucharski<br>
+mgr Andrzej Pękala
+<p>
+</p>
+</div>
+</div>
+<div class="kolumna">
+<b><div class="tytulnews" style="background-color: DodgerBlue; color: White">Nauczyciele religii
+</div></b>
+   <div class="podnews">ks. Jacek Ozdoba<br>
+dr Beata Wójtowicz
+<p>
+</p>
+</div>
+</div>
+<div class="kolumna">
+<b><div class="tytulnews" style="background-color: DodgerBlue; color: White">Nauczyciele wychowania fizycznego
+</div></b>
+   <div class="podnews">mgr Michał Dąbrowski<br>
+mgr Janusz Jelonek<br>
+mgr Miłosz Kościelny<br>
+mgr Robert Mazanek<br>
+mgr Ewa Stefańska<br>
+mgr Grzegorz Szczepański<br>
+mgr Wioletta Wójcik
+<p>
+</p>
+</div>
+</div>
+<div class="kolumna">
+<b><div class="tytulnews" style="background-color: DodgerBlue; color: White">Nauczyciele edukacji dla bezpieczeństwa
+</div></b>
+   <div class="podnews">mgr Barbara Durmała
+<p>
+</p>
+</div>
+</div>
+</div>
+<div class="loader-wrapper">
+      <span class="loader"><span class="loader-inner"></span></span>
+    </div>
+<script>
+        $(window).on("load",function(){
+          $(".loader-wrapper").fadeOut("slow");
+        });
+    </script>
+   </body>
+</html>
