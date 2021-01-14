@@ -1,4 +1,4 @@
-<html>
+<html lang="pl">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
 <head>
@@ -27,7 +27,7 @@ html, body {
   background-color: White;
   display:flex;
 }
-#left{
+#left, #lefttel{
      flex: 1; 
      left:0;
      width:300px;
@@ -36,8 +36,29 @@ html, body {
      position:fixed;
      top:0;
 }
-@media screen and (max-width:530px) and (max-height: 768px) {
+#left {
+	display: block;
+}
+#lefttel {
+	display: none;
+}
+@media screen and (max-width:625px) and (max-height: 375px) {
   #left {
+     display: none;
+  }
+}	
+@media screen and (max-width:625px) and (max-height: 375px) {
+  #lefttel {
+     display: block;
+  }
+}
+@media screen and (max-width:530px) and (max-height: 768px) {
+  #left, #lefttel {
+     width:25vw;
+  }
+}
+@media screen and (max-width:625px) and (max-height: 375px) {
+  #left, #lefttel {
      width:25vw;
   }
 }
@@ -48,6 +69,11 @@ html, body {
      flex: 3;
 }
 @media screen and (max-width:530px) and (max-height: 768px) {
+  #center {
+     margin-left:25vw;
+  }
+}
+@media screen and (max-width:625px) and (max-height: 375px) {
   #center {
      margin-left:25vw;
   }
@@ -191,6 +217,12 @@ div.wczesniejsze a:active {
 }
 @media screen and (max-width:530px) and (max-height: 768px) {
   .naglowek {
+     font-size: 3vw;
+     margin-left: 2vw;
+  }
+}
+@media screen and (max-width:625px) and (max-height: 375px) {
+    .naglowek {
      font-size: 3vw;
      margin-left: 2vw;
   }
@@ -457,23 +489,37 @@ div.wczesniejsze a:active {
 <body>
 <div id="left"><center><br><br><span><b>X</b>LO</span><div class="podspan">im. Komisji Edukacji Narodowej w Krakowie</div>
 <div class="Stronaglownanormalnie"><br style="line-height: 5vh"><a href="Stronaglowna.html" class="myButton">Strona główna</a></div>
-<div class="Stronaglownatel"><br style="line-height: 5vh"><a href="Stronaglowna.html"><img src="dom.svg" width="40vw"></a></div>
+<div class="Stronaglownatel"><br style="line-height: 5vh"><a href="Stronaglowna.html"><img src="dom.svg" width="40vw" alt="Znak strony głównej"></a></div>
 <div class="COVID-19normalnie"><p><a href="COVID-19.html" class="myButton2">COVID-19</a></p></div>
-<div class="COVID-19tel"><p><a href="COVID-19.html"><img src="koronawirus.svg" width="40vw"></a></p></div>
+<div class="COVID-19tel"><p><a href="COVID-19.html"><img src="koronawirus.svg" width="40vw" alt="Znak COVID-19"></a></p></div>
 <div class="Oszkolenormalnie"><p><a href="Oszkole.html" class="myButton3">O szkole</a></p></div>
-<div class="Oszkoletel"><p><a href="Oszkole.html"><img src="szkola.svg" width="40vw"></a></p></div>
+<div class="Oszkoletel"><p><a href="Oszkole.html"><img src="szkola.svg" width="40vw" alt="Znak szkoły"></a></p></div>
 <div class="Rekrutacjanormalnie"><p><a href="Rekrutacja.html" class="myButton4">Rekrutacja</a></p></div>
-<div class="Rekrutacjatel"><p><a href="Rekrutacja.html"><img src="dlugopis.svg" width="40vw"></a></p></div>
+<div class="Rekrutacjatel"><p><a href="Rekrutacja.html"><img src="dlugopis.svg" width="40vw" alt="Znak rekrutacji"></a></p></div>
 <div class="Moodlenormalnie"><p><a href="https://www.x-lo.krakow.pl/moodle/index.php" class="myButton5">Moodle</a></p></div>
-<div class="Moodletel"><p><a href="https://www.x-lo.krakow.pl/moodle/index.php"><img src="moodle.svg" width="40vw"></a></p></div>
+<div class="Moodletel"><p><a href="https://www.x-lo.krakow.pl/moodle/index.php"><img src="moodle.svg" width="40vw" alt="Znak Moodle"></a></p></div>
 <div class="Kontaktnormalnie"><p><a href="Kontakt.html" class="myButton6">Kontakt</a></p></div>
-<div class="Kontakttel"><p><a href="Kontakt.html"><img src="chmura.svg" width="40vw"></a></p></div>
+<div class="Kontakttel"><p><a href="Kontakt.html"><img src="chmura.svg" width="40vw" alt="Znak kontaktu"></a></p></div>
+</center></div>
+<div id="lefttel"><center><span style="font-size: 15px"><b style="font-size: 25px">X</b>LO</span>
+<div class="Stronaglownanormalnie"><br style="line-height: 0.3vh"><a href="Stronaglowna.html" class="myButton">Strona główna</a></div>
+<div class="Stronaglownatel"><br style="line-height: 0.3vh"><a href="Stronaglowna.html"><img src="dom.svg" width="40vh" alt="Znak strony głównej"></a></div>
+<div class="COVID-19normalnie"><br style="line-height: 3vh"><a href="COVID-19.html" class="myButton2">COVID-19</a></div>
+<div class="COVID-19tel"><br style="line-height: 0.6vh"><a href="COVID-19.html"><img src="koronawirus.svg" width="40vh" alt="Znak COVID-19"></a></div>
+<div class="Oszkolenormalnie"><br style="line-height: 3vh"><a href="Oszkole.html" class="myButton3">O szkole</a></div>
+<div class="Oszkoletel"><br style="line-height: 0.6vh"><a href="Oszkole.html"><img src="szkola.svg" width="40vh" alt="Znak szkoły"></a></div>
+<div class="Rekrutacjanormalnie"><br style="line-height: 3vh"><a href="Rekrutacja.html" class="myButton4">Rekrutacja</a></div>
+<div class="Rekrutacjatel"><br style="line-height: 0.6vh"><a href="Rekrutacja.html"><img src="dlugopis.svg" width="40vh" alt="Znak rekrutacji"></a></div>
+<div class="Moodlenormalnie"><br style="line-height: 3vh"><a href="https://www.x-lo.krakow.pl/moodle/index.php" class="myButton5">Moodle</a></div>
+<div class="Moodletel"><br style="line-height: 0.6vh"><a href="https://www.x-lo.krakow.pl/moodle/index.php"><img src="moodle.svg" width="40vh" alt="Znak Moodle"></a></div>
+<div class="Kontaktnormalnie"><br style="line-height: 3vh"><a href="Kontakt.html" class="myButton6">Kontakt</a></div>
+<div class="Kontakttel"><br style="line-height: 0.6vh"><a href="Kontakt.html"><img src="chmura.svg" width="40vh" alt="Znak kontaktu"></a></div>
 </center></div>
 <div id="center"><div class="naglowek">Dlaczego warto uczyć się w X Liceum?</div>
 <br>
 <div class="rzad">
 <div class="kolumna">
-<b><div class="tytulnews"></div></b>
+<div class="tytulnews"><b></b></div>
    <div class="podnews">X LO cieszy się popularnością ze względu na wysoki poziom nauczania i przyjazną atmosferę. W  naszej szkole pracuje zespół doświadczonych nauczycieli, poszukujących inspiracji dydaktycznych i rozwijających swoje kompetencje.
 <p>
 <li>Dbamy o komfort pracy uczniów i dostępność przydatnych w nauce technologii informatycznych.
@@ -492,7 +538,7 @@ ZOBACZ:<br>
 </div>
 </div>
 <div class="kolumna">
-<b><div class="tytulnews">ZAPLECZE DYDAKTYCZNE</div></b>
+<div class="tytulnews"><b>ZAPLECZE DYDAKTYCZNE</b></div>
    <div class="podnews">Liceum posiada 20 dużych sal lekcyjnych, bogato wyposażone pracownie naukowe (biologiczną, geograficzną, chemiczną, matematyczną, fizyczną) uzupełnione o tablice interaktywne oraz stanowiska komputerowe, pełnowymiarową salę gimnastyczną z widownią, siłownię, aulę ze sceną. Nowoczesna biblioteka z multimedialnym centrum informacji oraz elektronicznym spisem księgozbioru jest obsługiwana przez program informatyczny MOL. W każdej sali lekcyjnej znajduje się rzutnik multimedialny i komputer. Nauczyciele i uczniowie mają do dyspozycji pomoce naukowe, w tym sprzęt audiowizualny, video mikroskop, teleskop. Nowoczesny sprzęt dydaktyczny wdraża uczniów do mobilnego korzystania z platformy edukacyjnej.
 <p>
 Uczniowie mogą korzystać z bufetu prowadzonego przez ajenta oraz punktu ksero.
@@ -500,14 +546,14 @@ Uczniowie mogą korzystać z bufetu prowadzonego przez ajenta oraz punktu ksero.
 </div>
 </div>
 <div class="kolumna">
-<b><div class="tytulnews">KADRA NAUCZYCIELSKA</div></b>
+<div class="tytulnews"><b>KADRA NAUCZYCIELSKA</b></div>
    <div class="podnews">90% nauczycieli przedmiotów maturalnych jest egzaminatorami OKE, 90% nauczycieli posiada stopień nauczyciela dyplomowanego, 4 nauczycieli jest ekspertami ds. awansu zawodowego.
 <p>
 </p>
 </div>
 </div>
 <div class="kolumna">
-<b><div class="tytulnews">WSPÓŁPRACA Z UCZELNIAMI WYŻSZYMI</div></b>
+<div class="tytulnews"><b>WSPÓŁPRACA Z UCZELNIAMI WYŻSZYMI</b></div>
    <div class="podnews"><li><b>Politechnika Krakowska</b> - patronat nad klasami z rozszerzonym programem nauczania przedmiotów ścisłych-zajęcia odbywają się w Instytucie Fizyki i w Instytucie Matematyki
 <li><b>Uniwersytet Jagielloński</b> - klasy z rozszerzonym programem humanistycznym są objęte patronatem i współpracują z Instytutem Etnologii i Antropologii Kulturowej
 <li><b>Uniwersytet Jagielloński</b> - udział uczniów z klas o rozszerzonym programie z biologii-chemii w zajęciach laboratoryjnych i terenowych organizowanych przez Instytut Zoologii i Badań Biomedycznych oraz Instytut Botaniki; współpraca w ramach Małopolskiej Chmury Edukacyjnej
@@ -519,28 +565,28 @@ Uczniowie mogą korzystać z bufetu prowadzonego przez ajenta oraz punktu ksero.
 </div>
 </div>
 <div class="kolumna">
-<b><div class="tytulnews">WYCHOWANIE I OPIEKA</div></b>
+<div class="tytulnews"><b>WYCHOWANIE I OPIEKA</b></div>
    <div class="podnews">Szkoła kształtuje postawy wzajemnego szacunku, tolerancji, współpracy i współdziałania w realizacji celów całej społeczności szkolnej. Program Wychowawczo-Profilaktyczny Szkoły współtworzony jest przez młodzież, rodziców i nauczycieli. Zapewniamy profesjonalną  opiekę pedagoga i psychologa. Uczniowie klas pierwszych objęci są zajęciami integracyjnymi (także w formie wycieczek) oraz warsztatami efektywnego uczenia się. Młodzież znajdująca się w trudnej sytuacji materialnej może korzystać z refundacji kosztów wyżywienia. Działający w szkole Samorząd Uczniowski podejmuje różnorodne akcje wynikające z planu własnych działań oraz programu wychowawczego szkoły, m. in. organizuje zbiórki charytatywne i konkursy. Członkowie Samorządu reprezentują szkołę w strukturach samorządowych dzielnicy i miasta.
 <p>
 </p>
 </div>
 </div>
 <div class="kolumna">
-<b><div class="tytulnews">KONTAKTY ZAGRANICZNE</div></b>
+<div class="tytulnews"><b>KONTAKTY ZAGRANICZNE</b></div>
    <div class="podnews">X LO szczyci się wieloletnią tradycją w zakresie kontaktów zagranicznych, które sprzyjają podwyższaniu poziomu znajomości języków obcych oraz poznawaniu kultur innych krajów. Prowadzimy wymiany z partnerskimi szkołami z Niemiec i Włoch w ramach interdyscyplinarnych programów współpracy międzynarodowej. Od kilku lat uczniowie naszej szkoły uczestniczą również w Forum Młodzieży Europejskiej, podczas  którego  mają możliwość doskonalenia swoich umiejętności językowych (projekty w ramach warsztatów fotograficznych, muzycznych, prasowych, tanecznych, teatralnych czy turystycznych).
 <p>
 </p>
 </div>
 </div>
 <div class="kolumna">
-<b><div class="tytulnews">SZCZEGÓLNE OSIĄGNIĘCIA I SUKCESY</div></b>
+<div class="tytulnews"><b>SZCZEGÓLNE OSIĄGNIĘCIA I SUKCESY</b></div>
    <div class="podnews">Szkoła cieszy się popularnością ze względu na wysoki poziom nauczania, potwierdzony wynikami zewnętrznego egzaminu maturalnego. Nasi uczniowie zostali stypendystami Stypendium Prezesa Rady Ministrów oraz Stypendium Ministra Edukacji Narodowej. Szczycimy się również gronem laureatów Samorządowego Konkursu Nastolatków "8 Wspaniałych". Uczniowie X LO są finalistami olimpiad przedmiotowych, międzyszkolnych zawodów matematycznych, laureatami konkursów poetyckich, recytatorskich, fotograficznych, odnoszą sukcesy w zawodach i rozgrywkach sportowych oraz w zawodach sanitarnych.
 <p>
 </p>
 </div>
 </div>
 <div class="kolumna">
-<b><div class="tytulnews">ZAJĘCIA POZALEKCYJNE</div></b>
+<div class="tytulnews"><b>ZAJĘCIA POZALEKCYJNE</b></div>
    <div class="podnews">Szkoła rozwija zainteresowania uczniów w ramach oferty zajęć pozalekcyjnych. Proponujemy m. in.  Akademię Filmową, teatr, chór, dodatkowe zajęcia przedmiotowe, olimpijskie oraz spotkania przygotowujące do egzaminu maturalnego. Dbamy również o uczniów mających trudności w nauce poprzez organizowanie konsultacji z poszczególnych przedmiotów. Licealiści mają możliwość uczestniczenia w zajęciach rekreacyjno-sportowych z takich dyscyplin jak: koszykówka, piłka halowa, siatkowa, piłka nożna, aerobik, pływanie.
 <p>
 Organizujemy również liczne konkursy oraz wyjścia do teatrów, kin, muzeów, wyjazdy na obozy i wycieczki naukowe. Ponadto zachęcamy młodzież do aktywnego wspierania organizacji pożytku publicznego oraz pomocy potrzebującym poprzez udział w licznych akcjach charytatywnych oraz współpracę z takimi instytucjami jak domy dziecka, Hospicjum św. Łazarza, Dom Pomocy Społecznej  im. L.i A. Helclów czy Towarzystwo Opieki nad Zwierzętami.
@@ -548,7 +594,7 @@ Organizujemy również liczne konkursy oraz wyjścia do teatrów, kin, muzeów, 
 </div>
 </div>
 <div class="kolumna">
-<b><div class="tytulnews">DOJAZD DO SZKOŁY</div></b>
+<div class="tytulnews"><b>DOJAZD DO SZKOŁY</b></div>
    <div class="podnews">Istotną zaletą X LO jest doskonała lokalizacja, zapewniająca dogodny dojazd z najdalszych nawet krańców miasta i okolic Krakowa. W pobliżu ulicy Wróblewskiego znajdują się między innymi przystanki tramwajowe: Dworzec Główny, Stary Kleparz i Nowy Kleparz. Poza tym odległość między szkołą a Dworcem Głównym można pokonać pieszo w ciągu kilku minut, zatem dojazd do liceum pociągiem nie stanowi problemu.
 </div>
 </div>
