@@ -1,0 +1,808 @@
+<html lang="pl">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+<head>
+<title>X Liceum Ogólnokształcące w Krakowie im. KEN</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Yantramanav:wght@700;900&display=swap,News+Cycle:wght@700&display=swap"
+rel="stylesheet">
+<style>
+html, body {
+  height: 100%;
+  margin: 0;
+  overflow-x: hidden;
+  overflow-y: visible;
+  background-image: url('https://scontent.fktw5-1.fna.fbcdn.net/v/t1.15752-9/133832333_422391252215182_5439948955064273770_n.png?_nc_cat=105&cb=846ca55b-ee17756f&ccb=2&_nc_sid=ae9488&_nc_ohc=TVfEOICzBd4AX9MSPvG&_nc_ht=scontent.fktw5-1.fna&oh=35de813962b3833d433703268c8a0183&oe=6010517A');
+  background-repeat: no-repeat;
+  background-attachment: fixed;  
+  background-size: cover;
+}
+.loader-wrapper {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: White;
+  display:flex;
+}
+#left, #lefttel{
+     flex: 1; 
+     left:0;
+     width:300px;
+     background: linear-gradient(DodgerBlue, DeepSkyBlue);  
+     height:100vh;
+     position:fixed;
+     top:0;
+}
+#left {
+	display: block;
+}
+#lefttel {
+	display: none;
+}
+@media screen and (max-width:625px) and (max-height: 375px) {
+  #left {
+     display: none;
+  }
+}	
+@media screen and (max-width:625px) and (max-height: 375px) {
+  #lefttel {
+     display: block;
+  }
+}
+@media screen and (max-width:530px) and (max-height: 768px) {
+  #left, #lefttel {
+     width:25vw;
+  }
+}
+@media screen and (max-width:625px) and (max-height: 375px) {
+  #left, #lefttel {
+     width:25vw;
+  }
+}
+#center {
+     margin-top:12px;
+     margin-left:310px;
+     margin-right: -8px;
+     flex: 3;
+}
+@media screen and (max-width:530px) and (max-height: 768px) {
+  #center {
+     margin-left:25vw;
+  }
+}
+@media screen and (max-width:625px) and (max-height: 375px) {
+  #center {
+     margin-left:25vw;
+  }
+}
+span b {
+     font-family: "Yantramanav", sans-serif;
+     color: white;
+     font-size: 5.3vw;
+     font-size: 10.6vh;
+}
+span  {
+     font-family: "Yantramanav", sans-serif;
+     color: white;
+     font-size: 5.2vh;
+}
+.podspan {
+     font-family: "Yantramanav", sans-serif;
+     color: white;
+     font-size: 2vh;
+}
+.tytulnews {
+     font-family: "News Cycle", sans-serif;
+     color: #757471;
+     font-size: 1vw;
+     text-transform:uppercase;
+     letter-spacing: 2px;
+}
+@media screen and (max-width:768px) and (max-height: 1920px) {
+  .tytulnews {
+     font-size: 3vw;
+  }
+}
+.podnews {
+     font-family: "News Cycle", sans-serif;
+     color: Grey;
+     font-size: 1vw;
+     text-align: justify;
+}
+@media screen and (max-width:768px) and (max-height: 1920px) {
+  .tytulnews, .podnews {
+     font-size: 3vw;
+  }
+}
+div.kolumna a:link, .kolumna a:visited, .kolumna a:hover, .kolumna a:active, .kolumna2normalnie a:link, .kolumna2normalnie a:visited, .kolumna2normalnie a:hover, .kolumna2normalnie a:active, kolumna2tel a:link, .kolumna2tel a:visited, .kolumna2tel a:hover, .kolumna2tel a:active {
+  color: Grey;
+  background-color: transparent;
+  text-decoration: underline;
+}
+div.kolumna2tel a:link {
+  color: Grey;
+  background-color: transparent;
+  text-decoration: underline;
+}
+div.kolumna2tel a:visited {
+  color: Grey;
+  background-color: transparent;
+  text-decoration: underline;
+}
+div.kolumna2tel a:hover {
+  color: Grey;
+  background-color: transparent;
+  text-decoration: underline;
+}
+div.kolumna2tel a:active {
+  color: Grey;
+  background-color: transparent;
+  text-decoration: underline;
+}
+.kolumna {
+  float: left;
+  width: 97.5%;
+  padding: 5px;
+}
+.kolumna2 {
+  width: 33%;
+  margin: auto;
+  padding: 5px;
+  font-size: 0.8vw;
+}
+.kolumna2tel {
+  float: left;
+  width: 95%;
+  padding: 5px;
+  display: none;
+}
+@media screen and (max-width:1024px) and (max-height: 768px) {
+        .kolumna2normalnie {
+        display: none;
+}
+}
+@media screen and (max-width:1024px) and (max-height: 768px) {
+        .kolumna2tel {
+        display: block;
+}
+}
+.rzad::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+@media screen and (max-width:1024px) and (max-height: 768px) {
+  .kolumna {
+    width: 95%;
+  }
+}
+@media screen and (max-width:1024px) and (max-height: 768px) {
+  .kolumna2 {
+    width: 95%;
+  }
+}
+div.wczesniejsze a:link {
+  color: Grey;
+  background-color: transparent;
+  text-decoration: underline;
+}
+div.wczesniejsze a:visited {
+  color: Grey;
+  background-color: transparent;
+  text-decoration: underline;
+}
+div.wczesniejsze a:hover {
+  color: Grey;
+  background-color: transparent;
+  text-decoration: underline;
+}
+div.wczesniejsze a:active {
+  color: Grey;
+  background-color: transparent;
+  text-decoration: underline;
+}
+.wczesniejsze {
+     font-family: "News Cycle", sans-serif;
+     color: Grey;
+     font-size: 1vw;
+     font-weight: bold;
+     letter-spacing: 2px;
+     text-transform:uppercase;
+}
+.naglowek {
+     font-family: "Helvetica";
+     color: SlateGrey;
+     font-size: 1.3vw;
+     letter-spacing: 2px;
+}
+@media screen and (max-width:530px) and (max-height: 768px) {
+  .naglowek {
+     font-size: 3vw;
+     margin-left: 2vw;
+  }
+}
+@media screen and (max-width:625px) and (max-height: 375px) {
+    .naglowek {
+     font-size: 3vw;
+     margin-left: 2vw;
+  }
+}
+.myButton {
+	box-shadow: 0px 6px 13px -4px DarkGrey;
+	background:linear-gradient(to bottom, #ffffff 5%, #f6f6f6 100%);
+	background-color:#ffffff;
+	border-radius:42px;
+	display:inline-block;
+	cursor:pointer;
+	color:DodgerBlue;
+	font-family:Arial;
+	font-size:2vh;
+	font-weight:bold;
+        padding:2vh 8vh;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #ffffff;
+	transition: color 0.3s, padding 0.3s;
+}
+.stronaglownanormalnie{
+	display: block;
+}
+.stronaglownatel {
+        display: none;
+}
+@media screen and (max-width:1023px) and (max-height: 767px) {
+        .stronaglownanormalnie {
+        display: none;
+}
+}
+@media screen and (max-width:1023px) and (max-height: 767px) {
+        .stronaglownatel {
+        display: block;
+}
+}
+.COVID-19normalnie{
+	display: block;
+}
+.COVID-19tel {
+        display: none;
+}
+@media screen and (max-width:1023px) and (max-height: 767px) {
+        .COVID-19normalnie {
+        display: none;
+}
+}
+@media screen and (max-width:1023px) and (max-height: 767px) {
+        .COVID-19tel {
+        display: block;
+}
+}
+.Oszkolenormalnie{
+	display: block;
+}
+.Oszkoletel {
+        display: none;
+}
+@media screen and (max-width:1023px) and (max-height: 767px) {
+        .Oszkolenormalnie {
+        display: none;
+}
+}
+@media screen and (max-width:1023px) and (max-height: 767px) {
+        .Oszkoletel {
+        display: block;
+}
+}
+.Rekrutacjanormalnie{
+	display: block;
+}
+.Rekrutacjatel {
+        display: none;
+}
+@media screen and (max-width:1023px) and (max-height: 767px) {
+        .Rekrutacjanormalnie {
+        display: none;
+}
+}
+@media screen and (max-width:1023px) and (max-height: 767px) {
+        .Rekrutacjatel {
+        display: block;
+}
+}
+.Moodlenormalnie{
+	display: block;
+}
+.Moodletel {
+        display: none;
+}
+@media screen and (max-width:1023px) and (max-height: 767px) {
+        .Moodlenormalnie {
+        display: none;
+}
+}
+@media screen and (max-width:1023px) and (max-height: 767px) {
+        .Moodletel {
+        display: block;
+}
+}
+.Kontaktnormalnie{
+	display: block;
+}
+.Kontakttel {
+        display: none;
+}
+@media screen and (max-width:1023px) and (max-height: 767px) {
+        .Kontaktnormalnie {
+        display: none;
+}
+}
+@media screen and (max-width:1023px) and (max-height: 767px) {
+        .Kontakttel {
+        display: block;
+}
+}
+.myButton:hover {
+        color: LightGreen;
+	position:relative;
+	padding:2vh 9.6vh;
+	position:relative;
+}
+.myButton:active {
+	position:relative;
+	top:1px;
+}
+.myButton2 {
+	box-shadow: 0px 6px 13px -4px DarkGrey;
+	background:linear-gradient(to bottom, #ffffff 5%, #f6f6f6 100%);
+	background-color:#ffffff;
+	border-radius:42px;
+	display:inline-block;
+	cursor:pointer;
+	color:DodgerBlue;
+	font-family:Arial;
+	font-size:2vh;
+	font-weight:bold;
+	padding:2vh 10.26vh;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #ffffff;
+	transition: color 0.3s, padding 0.3s;
+}
+.myButton2:hover {
+        color: LightGreen;
+	position:relative;
+	padding:2vh 11.86vh;
+	position:relative;
+}
+.myButton2:active {
+	position:relative;
+	top:1px;
+}
+.myButton3 {
+	box-shadow: 0px 6px 13px -4px DarkGrey;
+	background:linear-gradient(to bottom, #ffffff 5%, #f6f6f6 100%);
+	background-color:#ffffff;
+	border-radius:42px;
+	display:inline-block;
+	cursor:pointer;
+	color:DodgerBlue;
+	font-family:Arial;
+	font-size:2vh;
+	font-weight:bold;
+	padding:2vh 10.66vh;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #ffffff;
+	transition: color 0.3s, padding 0.3s;
+}
+.myButton3:hover {
+        color: LightGreen;
+	position:relative;
+	padding:2vh 12.26vh;
+	position:relative;
+}
+.myButton3:active {
+	position:relative;
+	top:1px;
+}
+.myButton4 {
+	box-shadow: 0px 6px 13px -4px DarkGrey;
+	background:linear-gradient(to bottom, #ffffff 5%, #f6f6f6 100%);
+	background-color:#ffffff;
+	border-radius:42px;
+	display:inline-block;
+	cursor:pointer;
+	color:DodgerBlue;
+	font-family:Arial;
+	font-size:2vh;
+	font-weight:bold;
+	padding:2vh 9.6vh;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #ffffff;
+	transition: color 0.3s, padding 0.3s;
+}
+.myButton4:hover {
+        color: LightGreen;
+	position:relative;
+	padding:2vh 11.2vh;
+	position:relative;
+}
+.myButton4:active {
+	position:relative;
+	top:1px;
+}
+.myButton5 {
+	box-shadow: 0px 6px 13px -4px DarkGrey;
+	background:linear-gradient(to bottom, #ffffff 5%, #f6f6f6 100%);
+	background-color:#ffffff;
+	border-radius:42px;
+	display:inline-block;
+	cursor:pointer;
+	color:DodgerBlue;
+	font-family:Arial;
+	font-size:2vh;
+	font-weight:bold;
+	padding:2vh 10.93vh;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #ffffff;
+	transition: color 0.3s, padding 0.3s;
+}
+.myButton5:hover {
+        color: LightGreen;
+	position:relative;
+	padding:2vh 12.53vh;
+	position:relative;
+}
+.myButton5:active {
+	position:relative;
+	top:1px;
+}
+.myButton6 {
+	box-shadow: 0px 6px 13px -4px DarkGrey;
+	background:linear-gradient(to bottom, #ffffff 5%, #f6f6f6 100%);
+	background-color:#ffffff;
+	border-radius:42px;
+	display:inline-block;
+	cursor:pointer;
+	color:DodgerBlue;
+	font-family:Arial;
+	font-size:2vh;
+	font-weight:bold;
+	padding:2vh 10.93vh;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #ffffff;
+	transition: color 0.3s, padding 0.3s;
+}
+.myButton6:hover {
+        color: LightGreen;
+	position:relative;
+	padding:2vh 12.53vh;
+	position:relative;
+}
+.myButton6:active {
+	position:relative;
+	top:1px;
+}
+#datetime {
+     font-family: "Yantramanav", sans-serif;
+     color: white;
+     font-size: 2vh;
+}
+</style>
+</head>
+<body>
+<div id="left"><center><br><br><span><b>X</b>LO</span><div class="podspan">im. Komisji Edukacji Narodowej w Krakowie</div>
+<div class="Stronaglownanormalnie"><br style="line-height: 5vh"><a href="Stronaglowna.html" class="myButton">Strona główna</a></div>
+<div class="Stronaglownatel"><br style="line-height: 5vh"><a href="Stronaglowna.html"><img src="dom.svg" width="40vw" alt="Znak strony głównej"></a></div>
+<div class="COVID-19normalnie"><p><a href="COVID-19.html" class="myButton2">COVID-19</a></p></div>
+<div class="COVID-19tel"><p><a href="COVID-19.html"><img src="koronawirus.svg" width="40vw" alt="Znak COVID-19"></a></p></div>
+<div class="Oszkolenormalnie"><p><a href="Oszkole.html" class="myButton3">O szkole</a></p></div>
+<div class="Oszkoletel"><p><a href="Oszkole.html"><img src="szkola.svg" width="40vw" alt="Znak szkoły"></a></p></div>
+<div class="Rekrutacjanormalnie"><p><a href="Rekrutacja.html" class="myButton4">Rekrutacja</a></p></div>
+<div class="Rekrutacjatel"><p><a href="Rekrutacja.html"><img src="dlugopis.svg" width="40vw" alt="Znak rekrutacji"></a></p></div>
+<div class="Moodlenormalnie"><p><a href="https://www.x-lo.krakow.pl/moodle/index.php" class="myButton5">Moodle</a></p></div>
+<div class="Moodletel"><p><a href="https://www.x-lo.krakow.pl/moodle/index.php"><img src="moodle.svg" width="40vw" alt="Znak Moodle"></a></p></div>
+<div class="Kontaktnormalnie"><p><a href="Kontakt.html" class="myButton6">Kontakt</a></p></div>
+<div class="Kontakttel"><p><a href="Kontakt.html"><img src="chmura.svg" width="40vw" alt="Znak kontaktu"></a></p></div>
+</center></div>
+<div id="lefttel"><center><span style="font-size: 15px"><b style="font-size: 25px">X</b>LO</span>
+<div class="Stronaglownanormalnie"><br style="line-height: 0.3vh"><a href="Stronaglowna.html" class="myButton">Strona główna</a></div>
+<div class="Stronaglownatel"><br style="line-height: 0.3vh"><a href="Stronaglowna.html"><img src="dom.svg" width="40vh" alt="Znak strony głównej"></a></div>
+<div class="COVID-19normalnie"><br style="line-height: 3vh"><a href="COVID-19.html" class="myButton2">COVID-19</a></div>
+<div class="COVID-19tel"><br style="line-height: 0.6vh"><a href="COVID-19.html"><img src="koronawirus.svg" width="40vh" alt="Znak COVID-19"></a></div>
+<div class="Oszkolenormalnie"><br style="line-height: 3vh"><a href="Oszkole.html" class="myButton3">O szkole</a></div>
+<div class="Oszkoletel"><br style="line-height: 0.6vh"><a href="Oszkole.html"><img src="szkola.svg" width="40vh" alt="Znak szkoły"></a></div>
+<div class="Rekrutacjanormalnie"><br style="line-height: 3vh"><a href="Rekrutacja.html" class="myButton4">Rekrutacja</a></div>
+<div class="Rekrutacjatel"><br style="line-height: 0.6vh"><a href="Rekrutacja.html"><img src="dlugopis.svg" width="40vh" alt="Znak rekrutacji"></a></div>
+<div class="Moodlenormalnie"><br style="line-height: 3vh"><a href="https://www.x-lo.krakow.pl/moodle/index.php" class="myButton5">Moodle</a></div>
+<div class="Moodletel"><br style="line-height: 0.6vh"><a href="https://www.x-lo.krakow.pl/moodle/index.php"><img src="moodle.svg" width="40vh" alt="Znak Moodle"></a></div>
+<div class="Kontaktnormalnie"><br style="line-height: 3vh"><a href="Kontakt.html" class="myButton6">Kontakt</a></div>
+<div class="Kontakttel"><br style="line-height: 0.6vh"><a href="Kontakt.html"><img src="chmura.svg" width="40vh" alt="Znak kontaktu"></a></div>
+</center></div>
+<div id="center"><div class="naglowek">Teatr szkolny</div>
+<br>
+<div class="rzad">
+<div class="kolumna">
+<div class="tytulnews"><b>„Życie to nie teatr...”, ale jak żyć bez teatru?</b></div>
+<div class="podnews">W X Liceum Ogólnokształcącym w Krakowie teatr działa od 2003 roku. Jego działalność zainaugurowała ówczesna klasa humanistyczna, prowadzona przez Marzenę Dąbrowę Szatko.
+Spektakl poetycki „Dzienniki zwyczajnie niezwyczajne”, oparty na tekstach Uli Struzikowskiej, uczennicy X LO, był kilkakrotnie prezentowany na scenach krakowskich domów kultury.
+Od tego czasu teatr przygotował szesnaście widowisk, biorąc na warsztat zarówno dzieła wielkich i uznanych twórców, np. Witolda Gombrowicza, Tadeusza Różewicza, Juliana Tuwima, Michaiła Bułhakowa, Maxa Frischa czy Jacka Kaczmarskiego, jak i współczesnych poetów, zrzeszonych w Krakowskim Oddziale Związku Literatów Polskich oraz autorek najmłodszego pokolenia, np. Agnieszki Sali czy Magdy Wojciechowskiej, obecnie absolwentek X LO.
+</div>
+</div>
+<div class="kolumna2">
+<img src="http://www.x-lo.krakow.pl/images/material_news/teatr_szkolny/rampa20177.jpg" width=100% alt="Rampa20177">
+</div>
+<div class="kolumna">
+<div class="tytulnews"><b></b></div>
+<div class="podnews">W teatrze szkolnym – jak w szkole i w życiu – jedni przychodzą, inni odchodzą, zmieniają się twarze i głosy, ale zostaje atmosfera wspólnej twórczej pracy i kontestacji współczesnej rzeczywistości. Jak zwyciężyć Tuwimowskie IDEOLO, nieodmiennie obecne w życiu publicznym? Jak odróżnić walentynkowe ćwierkanie pani redaktorki „radia bzdet” od tego, co naprawdę ważne i piękne? Jak pogodzić mój żołądek mój włos mój odcisk moje zdanie z potrzebami innych? Jak poruszać się w świecie zatartych wartości? Teatr nie daje gotowych odpowiedzi, teatr stawia niewygodne pytania i nie pozostawia obojętnym na nowy konsensus dla rodziny i światło bramki, które zastąpiło światło wiekuiste. Między innymi dlatego grupa teatralna X LO nazywa się Nietutejsi, a spektakle noszą takie tytuły jak Audio-Tele, Ludożercy czy Podpalacze.
+</div>
+</div>
+<div class="kolumna">
+<div class="tytulnews"><b>Wszystkich zainteresowanych realizacją kolejnych projektów zapraszamy do auli szkolnej w środy, o godz. 14.45.<br>
+Razem możemy więcej!</b></div>
+</div>
+<div class="kolumna2">
+<img src="http://www.x-lo.krakow.pl/images/material_news/teatr_szkolny/podpalacze34.jpg" width=100% alt="Podpalacze34">
+</div>
+<div class="kolumna2">
+<img src="http://www.x-lo.krakow.pl/images/material_news/teatr_szkolny/podpalacze9.jpg" width=100% alt="Podpalacze9">
+</div>
+<div class="kolumna">
+<div class="tytulnews"></div>
+<div class="podnews">Z okazji 99. rocznicy odzyskania niepodległości przez Polskę Teatr Szkolny przygotował spektakl pt. „Ta, co nie zginęła”. Nasi młodzi aktorzy, mówiąc słowami poetów – H. Bocheńskiej, J. Żuławskiego, E. Słońskiego, W. Słobodnika, J. Relidzyńskiego, A. Oppmana, B. Czerwińskiego – przedstawili wzruszającą historię bezimiennych ofiar powstań narodowych, ich matek, żon i dzieci. Obrazu dopełniły archiwalne filmy sprzed nieomal stu lat i pieśni legionowe.
+</div>
+</div>
+<div class="kolumna2">
+<img src="http://www.x-lo.krakow.pl/images/material_news/teatr_szkolny/nie_zginela1.jpg" width=100% alt="Niezginela1">
+<div class="podnews" style="text-align: center"><em>Ta, co nie zginęła</em>, autor zdjęcia: Michał Magiera
+</div>
+</div>
+<div class="kolumna2">
+<img src="http://www.x-lo.krakow.pl/images/material_news/teatr_szkolny/nie_zginela2.jpg" width=100% alt="Niezginela2">
+<div class="podnews" style="text-align: center"><em>Ta, co nie zginęła</em>, autor zdjęcia: Michał Magiera
+</div>
+</div>
+<div class="kolumna">
+<div class="tytulnews"></div>
+<div class="podnews">Stary rok pożegnaliśmy jasełkowym spektaklem „Szukamy stajenki”, inspirowanym albumem Jacka Kaczmarskiego pod tym samym tytułem. W skład przedstawienia weszły też wiersze Krzysztofa Kamila Baczyńskiego, Kazimiery Iłłakowiczówny, Leszka Moczulskiego, Adama Ziemianina i Agnieszki Zięby. Nie były to zwykłe jasełka. Nasi Pielgrzymi przebyli wielką drogę od „szarości nocy” do światła Gwiazdy Betlejemskiej, od zimnego peronu, gdzie zawiózł ich nocny pociąg, do ciepłego, świątecznego stołu. Błąkali się, nie mogąc znaleźć wspólnego języka i dobrych uczuć, aż trafili – za głosem serca i pastuszków – do Dzieciątka. Paru mądrych rad udzielił im Żebrak („Do Betlejem iść trzeba samotnie/drożyną – ścieżką własną...”), do innych mądrości doszli sami. Na koniec odkryli spokój i radość, czego i Wam życzymy :) 
+<br>
+PS A od stycznia zaczynamy nowy projekt! Zapraszamy do współpracy w środy, o godz. 14.45, w auli szkolnej.
+<p>
+</p>
+</div>
+</div>
+<div class="kolumna2">
+<img src="http://www.x-lo.krakow.pl/images/material_news/teatr_szkolny/teatr11.jpg" width=100% alt="Teatr11">
+<div class="podnews" style="text-align: center"><em>Szukamy stajenki</em>, autor zdjęcia: Michał Magiera
+</div>
+</div>
+<div class="kolumna2">
+<img src="http://www.x-lo.krakow.pl/images/material_news/teatr_szkolny/teatr12.jpg" width=100% alt="Teatr12">
+<div class="podnews" style="text-align: center"><em>Szukamy stajenki</em>, autor zdjęcia: Michał Magiera
+</div>
+</div>
+<div class="kolumna2">
+<img src="http://www.x-lo.krakow.pl/images/material_news/teatr_szkolny/teatr13.jpg" width=100% alt="Teatr13">
+<div class="podnews" style="text-align: center"><em>Szukamy stajenki</em>, autor zdjęcia: Michał Magiera
+</div>
+</div>
+<div class="kolumna2">
+<img src="http://www.x-lo.krakow.pl/images/material_news/teatr_szkolny/teatr14.jpg" width=100% alt="Teatr14">
+<div class="podnews" style="text-align: center"><em>Szukamy stajenki</em>, autor zdjęcia: Michał Magiera
+</div>
+</div>
+<div class="kolumna2">
+<img src="http://www.x-lo.krakow.pl/images/material_news/teatr_szkolny/teatr15.jpg" width=100% alt="Teatr15">
+<div class="podnews" style="text-align: center"><em>Ta, co nie zginęła</em>, autor zdjęcia: Michał Magiera
+</div>
+</div>
+<div class="kolumna2">
+<img src="http://www.x-lo.krakow.pl/images/material_news/teatr_szkolny/niedorosli.jpg" width=100% alt="Niedorośli">
+<div class="podnews" style="text-align: center">Plakat nowego spektaklu "Niedorosłych” wg „Ferdydurke” W. Gombrowicza<br>
+Autor plakatu : Magdalena Duś
+<p>
+</p>
+</div>
+</div>
+<div class="kolumna">
+<div class="tytulnews"></div>
+<div class="podnews">Nasi Kochani Fani,<br><br>
+
+Wakacje u drzwi, więc nadszedł czas podsumowań! 4 czerwca, w obecności wybranych klas, zakończyliśmy chlubnie sezon teatralny 2017/2018. Dwukrotnie pokazaliśmy spektakl pt.: „Niedorośli”, powstały na motywach „Ferdydurke” W. Gombrowicza. „Dziecięca, infantylna pupa” po raz ostatni spierała się o lepsze z zieloną „gębą” i młodzieńczą „łydką”, symbolicznie tłumacząc zawiłości ludzkiej kondycji. Freddy Durkee, czyli boleśnie rozdarty Józio, po raz ostatni dał się zaciągnąć Pimce do szkoły dyrektora Piórkowskiego, gdzie przyswoił sobie nieśmiertelną prawdę prof. Bladaczki o Słowackim, który „wielkim poetą był”. Przyłapany przez Belfra, wpadł w sidła Pensjonarki nowoczesnej, skąd się wyrwał dzięki przemyślnej intrydze i – przekonany o uwolnieniu – trafił prosto w ramiona Ciotek, które częstowały „cukielkami” i na rozproszkowanego Józia nasłały poczwórną Zosię. Na finał nad światem wzeszło słońce - „promienna i promieniejąca pupa”, przed którą nie ma ucieczki.<br><br>
+
+Dwa tygodnie wcześniej nasza koncepcja „Ferdydurke” przypadła do gustu Jury X Jubileuszowych Młodzieżowych Spotkań Teatralnych RAMPA w Gdowie, skąd przywieźliśmy I Nagrodę dla zespołu oraz Nagrodę Aktorską – ukoronowanie całorocznej pracy Nietutejszych. A więc opłaciły się godziny prób i morderczych ćwiczeń!<br><br>
+
+Przed nami wakacje, a po nich – nowe projekty i nowe wyzwania. Głowy mamy już pełne pomysłów, ale o tym na razie – sza! Wypoczywajcie zdrowo i bezpiecznie! Do zobaczenia we wrześniu – zapraszamy do współpracy!<br><br>
+
+Wasi Nietutejsi
+</div>
+</div>
+<div class="kolumna2">
+<img src="http://www.x-lo.krakow.pl/images/material_news/teatr_szkolny/niedorosli_rampa1.jpg" width=100% alt="Rampa1">
+<div class="podnews" style="text-align: center"><em>"Niedorośli"</em>, autor zdjęcia: Ela Sionko
+</div>
+</div>
+<div class="kolumna2">
+<img src="http://www.x-lo.krakow.pl/images/material_news/teatr_szkolny/niedorosli_rampa2.jpg" width=100% alt="Rampa2">
+<div class="podnews" style="text-align: center"><em>"Niedorośli"</em>, autor zdjęcia: Ela Sionko
+</div>
+</div>
+<div class="kolumna2">
+<img src="http://www.x-lo.krakow.pl/images/material_news/teatr_szkolny/niedorosli_rampa3.jpg" width=100% alt="Rampa3">
+<div class="podnews" style="text-align: center"><em>"Niedorośli"</em>, autor zdjęcia: Ela Sionko
+</div>
+</div>
+<div class="kolumna2">
+<img src="http://www.x-lo.krakow.pl/images/material_news/teatr_szkolny/niedorosli_rampa4.jpg" width=100% alt="Rampa4">
+<div class="podnews" style="text-align: center"><em>"Niedorośli"</em>, autor zdjęcia: Ela Sionko
+</div>
+</div>
+<div class="kolumna2">
+<img src="http://www.x-lo.krakow.pl/images/material_news/teatr_szkolny/niedorosli_rampa5.jpg" width=100% alt="Rampa5">
+<div class="podnews" style="text-align: center"><em>"Niedorośli"</em>, autor zdjęcia: Ela Sionko
+<p>
+</p>
+</div>
+</div>
+<div class="kolumna">
+<div class="tytulnews"><b>Trudno uwierzyć – właśnie kończymy kolejny sezon teatralny!</b></div>
+<div class="podnews">Rok szkolny 2018/2019 minął pod znakiem trzech spektakli. Do pierwszego - „A to Polska właśnie!” - przygotowywaliśmy się przez cały październik, by 9 listopada, tuż przed setną rocznicą odzyskania niepodległości przez Polskę, przypomnieć w poetyckim skrócie historię tragicznych walk powstańczych i radość z odzyskanej wolności. Słowa poetów romantycznych i młodopolskich przeplatały się z przesłaniem tych, którzy w 1918 roku byli świadkami wielkich wydarzeń, pieśni bojowe – ze współczesnymi pieśniami patriotycznymi, grottgerowskie żywe obrazy z archiwalnymi filmami z czasów I wojny światowej i dzisiejszymi krajobrazami ojczystymi.<br>
+„Ty to masz szczęście, ze w tym momencie żyć Ci przyszło w kraju nad Wisłą, Ty to masz szczęście”!
+</div>
+</div>
+<div class="kolumna2">
+<img src="http://www.x-lo.krakow.pl/images/material_news/teatr_szkolny/teatr1_1.jpg" width=100% alt="Teatr1_1">
+</div>
+<div class="kolumna2">
+<img src="http://www.x-lo.krakow.pl/images/material_news/teatr_szkolny/teatr1_2.jpg" width=100% alt="Teatr1_2">
+</div>
+<div class="kolumna2">
+<img src="http://www.x-lo.krakow.pl/images/material_news/teatr_szkolny/teatr1_3.jpg" width=100% alt="Teatr1_3">
+</div>
+<div class="kolumna2">
+<img src="http://www.x-lo.krakow.pl/images/material_news/teatr_szkolny/teatr1_4.jpg" width=100% alt="Teatr1_4">
+</div>
+<div class="kolumna2">
+<img src="http://www.x-lo.krakow.pl/images/material_news/teatr_szkolny/teatr1_5.jpg" width=100% alt="Teatr1_5">
+</div>
+<div class="kolumna2">
+<img src="http://www.x-lo.krakow.pl/images/material_news/teatr_szkolny/teatr1_6.jpg" width=100% alt="Teatr1_6">
+</div>
+<div class="kolumna2">
+<img src="http://www.x-lo.krakow.pl/images/material_news/teatr_szkolny/teatr1_7.jpg" width=100% alt="Teatr1_7">
+</div>
+<div class="kolumna2">
+<img src="http://www.x-lo.krakow.pl/images/material_news/teatr_szkolny/teatr1_8.jpg" width=100% alt="Teatr1_8">
+</div>
+<div class="kolumna2">
+<img src="http://www.x-lo.krakow.pl/images/material_news/teatr_szkolny/teatr1_9.jpg" width=100% alt="Teatr1_9">
+</div>
+<div class="kolumna2">
+<img src="http://www.x-lo.krakow.pl/images/material_news/teatr_szkolny/teatr1_10.jpg" width=100% alt="Teatr1_10">
+<p>
+</p>
+</div>
+<div class="kolumna">
+<div class="tytulnews"></div>
+<div class="podnews">Kolejny miesiąc zajęły nam przygotowania do spektaklu wigilijnego. I tym razem przemówili poeci, głównie współcześni, a przedstawienie nosiło tytuł zapożyczony od Jacka Kaczmarskiego: „Szukamy stajenki”. Ta, prawie niezauważona, stała skromnie z boku, niemal wtopiona w publiczność, i to do niej pielgrzymowali wśród zgromadzonych widzów wędrowcy, odkrywając sens Bożego Narodzenia i Dobrej Nowiny. Droga była daleka i ciernista, wiodła przez wojny, zbrodnie i wszelkie zło, przez obojętność i nijakość, kłótnie, spory i niesnaski - „aleśmy wreszcie dotarli do celu”. Spektakl zakończyło tradycyjne łamanie się opłatkiem i ciepłe życzenia świąteczne i noworoczne.
+</div>
+</div>
+<div class="kolumna2">
+<img src="http://www.x-lo.krakow.pl/images/material_news/teatr_szkolny/teatr2_1.jpg" width=100% alt="Teatr2_1">
+</div>
+<div class="kolumna2">
+<img src="http://www.x-lo.krakow.pl/images/material_news/teatr_szkolny/teatr2_2.jpg" width=100% alt="Teatr2_2">
+</div>
+<div class="kolumna2">
+<img src="http://www.x-lo.krakow.pl/images/material_news/teatr_szkolny/teatr2_3.jpg" width=100% alt="Teatr2_3">
+</div>
+<div class="kolumna2">
+<img src="http://www.x-lo.krakow.pl/images/material_news/teatr_szkolny/teatr2_4.jpg" width=100% alt="Teatr2_4">
+</div>
+<div class="kolumna2">
+<img src="http://www.x-lo.krakow.pl/images/material_news/teatr_szkolny/teatr2_5.jpg" width=100% alt="Teatr2_5">
+</div>
+<div class="kolumna2">
+<img src="http://www.x-lo.krakow.pl/images/material_news/teatr_szkolny/teatr2_6.jpg" width=100% alt="Teatr2_6">
+</div>
+<div class="kolumna2">
+<img src="http://www.x-lo.krakow.pl/images/material_news/teatr_szkolny/teatr2_7.jpg" width=100% alt="Teatr2_7">
+<p>
+</p>
+</div>
+</div>
+<div class="kolumna">
+<div class="tytulnews"></div>
+<div class="podnews">Po feriach zimowych przystąpiliśmy do realizacji najważniejszego projektu – spektaklu autorskiego „Zeszyt”. Scenariusz – na podstawie ubiegłorocznych pomysłów całego zespołu – napisały dwie uczestniczki naszych zajęć: część współczesną – Ludi Pilch z kl. II b, część historyczno-fantastyczną Magda Duś z kl. II d. „Zeszyt” to opowieść o młodym człowieku, który – uwikłany w konflikty dysfunkcyjnej rodziny - ucieka w świat wyobraźni, tworząc powieść fantasy, której postaci są inspirowane otaczającą go nieprzyjazną rzeczywistością. Dramatyczne zakończenie historii oddaje kres marzeń o… Ale nie zdradzajmy za wiele! We wrześniu mamy nadzieję zaprosić Was na szkolną prezentację, dotąd bowiem spektakl był pokazywany tylko w domach kultury i na deskach teatru Groteska, w ramach przeglądów festiwalowych. Udział w jednym z nich, XXX Młodzieżowych Prezentacjach Teatralnych „Teatr moich marzeń”, zakończyliśmy wyróżnieniem.
+</div>
+</div>
+<div class="kolumna2">
+<img src="http://www.x-lo.krakow.pl/images/material_news/teatr_szkolny/teatr3_1.jpg" width=100% alt="Teatr3_1">
+</div>
+<div class="kolumna2">
+<img src="http://www.x-lo.krakow.pl/images/material_news/teatr_szkolny/teatr3_2.jpg" width=100% alt="Teatr3_2">
+</div>
+<div class="kolumna2">
+<img src="http://www.x-lo.krakow.pl/images/material_news/teatr_szkolny/teatr3_3.jpg" width=100% alt="Teatr3_3">
+</div>
+<div class="kolumna2">
+<img src="http://www.x-lo.krakow.pl/images/material_news/teatr_szkolny/teatr3_4.jpg" width=100% alt="Teatr3_4">
+</div>
+<div class="kolumna2">
+<img src="http://www.x-lo.krakow.pl/images/material_news/teatr_szkolny/teatr3_5.jpg" width=100% alt="Teatr3_5">
+</div>
+<div class="kolumna2">
+<img src="http://www.x-lo.krakow.pl/images/material_news/teatr_szkolny/teatr3_6.jpg" width=100% alt="Teatr3_6">
+</div>
+<div class="kolumna2">
+<img src="http://www.x-lo.krakow.pl/images/material_news/teatr_szkolny/teatr3_7.jpg" width=100% alt="Teatr3_7">
+</div>
+<div class="kolumna2">
+<img src="http://www.x-lo.krakow.pl/images/material_news/teatr_szkolny/teatr3_8.jpg" width=100% alt="Teatr3_8">
+</div>
+<div class="kolumna2">
+<img src="http://www.x-lo.krakow.pl/images/material_news/teatr_szkolny/teatr3_9.jpg" width=100% alt="Teatr3_9">
+</div>
+<div class="kolumna">
+<div class="tytulnews"></div>
+<div class="podnews">Ani się obejrzeliśmy, a tu już koniec października! Tymczasem nasz teatr działa już od połowy września i nawet mamy za sobą pierwszy zrealizowany projekt. 15.10 2019 r. mieliśmy zaszczyt towarzyszyć Panu Profesorowi Andrzejowi Witkowiczowi, który w zabytkowej Sali Fontany promował swój tom poetycki pt.: „Krajobraz ze szklaną górą”. Wybrane wiersze ułożyły się w dramatyczną fabułę, którą zaprezentowała, w minimalistycznych dekoracjach i przy akompaniamencie fortepianu, część naszego zespołu.
+</div>
+</div>
+<div class="kolumna2">
+<img src="http://www.x-lo.krakow.pl/images/material_news/teatr_szkolny/teatr4_1.jpg" width=100% alt="Teatr4_1">
+<div class="podnews" style="text-align: center">Norbert Karasiński</div>
+</div>
+<div class="kolumna2">
+<img src="http://www.x-lo.krakow.pl/images/material_news/teatr_szkolny/teatr4_2.jpg" width=100% alt="Teatr4_2">
+<div class="podnews" style="text-align: center">Norbert Karasiński</div>
+</div>
+<div class="kolumna2">
+<img src="http://www.x-lo.krakow.pl/images/material_news/teatr_szkolny/teatr4_3.jpg" width=100% alt="Teatr4_3">
+<div class="podnews" style="text-align: center">Norbert Karasiński</div>
+</div>
+<div class="kolumna">
+<div class="tytulnews"></div>
+<div class="podnews">Tymczasem wielkimi krokami zbliża się 101. rocznica odzyskania niepodległości. W tym roku zaprosimy szkolną publiczność na niekonwencjonalny spektakl, wzięliśmy bowiem na warsztat opowiadania i eseje uczennic i uczniów naszego liceum, opublikowane z okazji stulecia wolnej Polski w tomie „To jest moje miejsce” (informacja o książce znajduje się na szkolnej www). Próby do przedstawienia już w trakcie! A potem przed nami kolejne wyzwania – pełnowymiarowy spektakl poetycki (o którym napiszemy więcej, gdy przestanie być niespodzianką :) ) oraz coroczny projekt festiwalowy, o którym myślimy od pierwszego spotkania.
+<br><br>
+Do zobaczenia na występach!
+<p>
+</p>
+</div>
+</div>
+<div class="kolumna">
+<div class="tytulnews"><b>Signum temporis</b></div>
+<div class="podnews">W marcu 2020 roku zaczynaliśmy właśnie próby do nowego spektaklu, gdy nagle, z dnia na dzień, wszystko się zmieniło. Część naszego życia przeniosła się do sieci, a druga część – chwilowo(?) zanikła. W październiku wydawało się, że wracamy na utarte ścieżki, więc znów zaczęliśmy próby do rozpoczętego spektaklu. Jak się jednak okazało, tytuł „Na obrazku za szkłem” stał się nadzwyczaj znaczący. Nieoczekiwanie trzeba było zawiesić realizację projektu i zająć się innym – pod nieco ironicznym tytułem: „Blisko” - tworzonym już „na obrazkach za szkłem”, czyli on-line. Z delikatnie inspirowanych rozmów i kilku wierszy powstał hybrydowy paradokument – trochę teatr, trochę film – w każdym razie znak naszych pandemicznych czasów. Znak przemian, które stają się codziennością, niezależnie od naszej woli, znak nowej rzeczywistości, której trzeba sprostać. Zobaczcie, jak to „nowe” wygląda tu i teraz, pod koniec 2020 roku. Być może za kilka miesięcy albo lat będziemy o „nim” myśleć zupełnie inaczej – przyzwyczaimy się albo będziemy bić na trwogę. A dziś – „Blisko”. Blisko?
+<br><br>
+<a href=" https://youtu.be/Rl71CfJvblI?list=UU3J7YHMHzy_jKYFU2iwYkyg">Spektakl</a>
+</div>
+</div>
+<div class="kolumna2">
+<img src="http://www.x-lo.krakow.pl/images/material_news/teatr_szkolny/blisko1.jpg" width=100% alt="Blisko1">
+</div>
+<div class="kolumna2">
+<img src="http://www.x-lo.krakow.pl/images/material_news/teatr_szkolny/blisko2.jpg" width=100% alt="Blisko2">
+</div>
+<div class="kolumna2">
+<img src="http://www.x-lo.krakow.pl/images/material_news/teatr_szkolny/blisko3.jpg" width=100% alt="Blisko3">
+</div>
+<div class="kolumna2">
+<img src="http://www.x-lo.krakow.pl/images/material_news/teatr_szkolny/blisko4.jpg" width=100% alt="Blisko4">
+</div>
+<div class="kolumna2">
+<img src="http://www.x-lo.krakow.pl/images/material_news/teatr_szkolny/blisko5.jpg" width=100% alt="Blisko5">
+</div>
+<div class="kolumna2">
+<img src="http://www.x-lo.krakow.pl/images/material_news/teatr_szkolny/blisko6.jpg" width=100% alt="Blisko6">
+<p>
+</p>
+</div>
+</div>
+<div class="loader-wrapper">
+      <span class="loader"><span class="loader-inner"></span></span>
+    </div>
+<script>
+        $(window).on("load",function(){
+          $(".loader-wrapper").fadeOut("slow");
+        });
+    </script>
+   </body>
+</html>
